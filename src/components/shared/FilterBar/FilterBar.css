@@ -1,0 +1,21 @@
+@import "./../../../assets/styles/global.css";
+
+.filter-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filter-bar-entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: var(--font-size-s);
+  font-weight: bold; 
+  color: var(--link);
+  margin-left: 5px;
+}
+
+.filter-bar-entry-checkbox {
+  width: 12px;
+}

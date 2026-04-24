@@ -1,0 +1,17 @@
+[
+  {
+    "id": "honey",
+    "name": "דבש",
+    "subCategories": [
+      
+    ]
+  },
+  {
+    "id": "flower",
+    "name": "קמח",
+    "subCategories": [
+      "לבן",
+      "כוסמין"
+    ]
+  }
+]

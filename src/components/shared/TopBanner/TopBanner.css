@@ -1,0 +1,16 @@
+@import "./../../../assets/styles/global.css";
+
+.top-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.top-banner-text {
+  display: flex;
+  font-size: var(--font-size-normal);
+  font-weight: bold;
+  color: #504031;
+}

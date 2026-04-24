@@ -1,0 +1,10 @@
+@import "./../../assets/styles/global.css";
+
+.items-view-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.items-view-attention {
+  margin-right: 62px;
+}

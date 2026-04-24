@@ -1,0 +1,30 @@
+@import "./../../assets/styles/global.css";
+
+.groceries-area {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--size-xs);
+  margin-right: var(--global-margin);
+  margin-left: var(--global-margin);
+  flex-direction: column;
+}
+
+.groceries-filter-area {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.groceries-filter-area-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.groceries-filter-area-left {
+  display: flex;
+  font-size: var(--font-size-normal);
+  font-weight: bold; 
+  color: var(--link);
+  margin-right: var(--size-normal);
+}

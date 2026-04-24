@@ -1,0 +1,399 @@
+@import './colors.css';
+@import './sizes.css';
+
+:root {
+  --positive: var(--orange);
+  --negative: var(--blue-03);
+  --normal: var(--pink-04);
+  --user-color: var(--cyan-04);
+  --global-margin: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-line-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.app-show-inline {
+  display: inline;
+}
+
+.app-vertiacl-space-l {
+  height: var(--size-l);
+}
+
+
+.app-vertiacl-space-xxxl {
+  height: var(--size-xxxl);
+}
+
+.app-show-flex {
+  display: flex;
+}
+
+.app-show-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-show-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-hide {
+  display: none;
+}
+
+.app-font-highlight {
+  color: var(--highlight);
+}
+
+.app-center {
+  text-align: center;
+}
+
+.app-title-centered {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.app-sub-title {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.app-default-text {
+  font-size: 1rem;
+  margin-bottom: -4px;
+}
+
+.app-bold {
+  font-weight: bold;
+}
+
+.app-light-bold {
+  font-weight: 500;
+}
+
+.app-link {
+  color: var(--link);
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+.app-link-sm {
+  font-size: 0.75rem;
+  color: var(--link);
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+.app-drop-down {
+  height: 32px;
+  font-size: var(--font-size-m);
+  padding: 4px;
+  background-color: var(--link);
+  color: white;
+}
+
+.app-indent-right-08 {
+  margin-right: var(--size-xs);
+}
+
+.app-indent-right-16 {
+  margin-right: var(--size-normal);
+}
+
+.app-indent-right-20 {
+  margin-right: var(--size-l);
+}
+
+.app-indent-right-32 {
+  margin-right: var(--size-xxl);
+}
+
+.app-indent-top-08 {
+  margin-top: var(--size-xs);
+}
+
+.app-indent-top-12 {
+  margin-top: var(--size-s);
+}
+
+.app-indent-top-16 {
+  margin-top: var(--size-normal);
+}
+
+.app-indent-top-20 {
+  margin-top: var(--size-l);
+}
+
+.app-indent-top-32 {
+  margin-top: var(--size-xxl);
+}
+
+.app-clickable {
+  cursor: pointer;
+}
+
+.app-button-primary {
+  background-color: var(--blue-02);
+  cursor: pointer;
+  border: 1px solid var(--blue-03);
+  border-radius: 5px;
+  padding: 16px 32px;
+  display: inline-block;
+  font-size: 2rem;
+  margin: 4px 2px;
+  color: white;
+}
+
+.app-button-primary-sm {
+  background-color: var(--blue-02);
+  cursor: pointer;
+  border: 1px solid var(--blue-03);
+  border-radius: 5px;
+  padding: 4px 8px;
+  display: inline-block;
+  font-size: var(--font-size-s);
+  margin: 4px 2px;
+  color: white;
+}
+
+.app-button-ghost {
+  cursor: pointer;
+  border: 1px solid var(--blue-03);
+  border-radius: 5px;
+  padding: 16px 32px;
+  display: inline-block;
+  font-size: 2rem;
+  margin: 4px 2px;
+}
+
+.app-button-ghost-sm {
+  cursor: pointer;
+  border: 1px solid var(--blue-03);
+  border-radius: 5px;
+  padding: 4px 8px;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+}
+
+.app-button-widget {
+  font-size: var(--font-size-l);
+  color: var(--blue-01);
+  border: 2px solid var(--blue-01);
+  background-color: var(--light-blue-00);
+  padding: 12px 12px 12px 12px;
+  border-radius: 2px;
+  margin-right: var(--size-l);
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.app-page {
+  direction: rtl;
+  padding-right: var(--global-margin);
+  padding-left: var(--global-margin);
+  flex: 2;
+  background-color: var(--background);
+  overflow: auto;
+  height: 100vh;
+}
+
+.positive-color {
+  color: var(--positive);
+}
+.negative-color {
+  color: var(--negative);
+}
+
+.normal-color {
+  color: var(--normal);
+}
+
+.user-color {
+  color: var(--user-color);
+
+}
+.app-page {
+  text-align: center;
+  direction: rtl;
+}
+
+.app-link {
+  color: #53198B;
+}
+
+.app-header-xl {
+  margin-top: var(--font-size-xl);
+  margin-bottom: var(--font-size-xl);
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+}
+
+.app-header-l {
+  margin-top: var(--font-size-xl);
+  margin-bottom: var(--font-size-xl);
+  font-size: var(--font-size-l);
+  font-weight: bold;
+}
+
+.app-header-m {
+  margin-top: var(--font-size-xl);
+  margin-bottom: var(--font-size-xl);
+  font-size: var(--font-size-m);
+  font-weight: bold;
+}
+
+.app-clickable {
+  cursor: pointer;
+}
+
+.app-width-100 {
+  min-width: 100px;
+}
+
+.app-width-80 {
+  min-width: 80px;
+}
+
+.grid-layout {
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+.app-border-selected {
+  border: solid 2px var(--orange);
+}
+
+.app-no-border {
+  border: none;
+}
+
+.margin-xl {
+  margin: var(--size-xl);
+}
+
+.margin-l {
+  margin: var(--size-l);
+}
+
+.margin-xs {
+  margin: var(--size-xs);
+}
+
+.margin-bottom-xl {
+  margin-bottom: var(--size-xl);
+}
+
+.margin-top-xl {
+  margin-top: var(--size-xl);
+}
+
+.margin-top-l {
+  margin-top: var(--size-l);
+}
+
+.margin-top-normal {
+  margin-top: var(--size-normal);
+}
+
+.margin-left-l {
+  margin-left: var(--size-l);
+}
+
+.margin-left-s {
+  margin-left: var(--size-s);
+}
+
+.padding-bottom-xs {
+  padding-bottom: var(--size-xs);
+}
+
+.padding-bottom-l {
+  padding-bottom: var(--size-l);
+}
+
+.padding-bottom-xl {
+  padding-bottom: var(--size-xl);
+}
+
+.padding-right-xs {
+  padding-right: var(--size-xs);
+}
+
+.padding-right-s {
+  padding-right: var(--size-s);
+}
+
+.padding-right-l {
+  padding-right: var(--size-l);
+}
+
+.info-popup-show {
+  display: inline;
+}
+
+.info-popup-hide {
+  display: none;
+}
+
+.info-popup-content {
+  background-color: var(--notification-info);
+  position: absolute;
+  top: 16px;
+  left: 110px;
+  padding: 16px;
+}
+
+.light-comment {
+  color: var(--gray-05);
+  font-size: var(--size-normal);
+}
+
+.app-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.app-table td {
+    padding: 4px 5px;
+    border: 1px solid #ddd;
+    text-align: right;
+    font-size: var(--font-size-s);
+}
+
+.app-table th {
+    padding: 4px 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* The Magic Bits */
+.app-table tbody tr:nth-child(odd) {
+    background-color: var(--light-blue-00);
+}
+
+.app-table tbody tr:nth-child(even) {
+    background-color: var(--blue-02);
+    color: white;
+}
+
+.app-table thead {
+    background-color: var(--blue-02);
+    color: #ffffff;
+}
+

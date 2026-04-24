@@ -1,0 +1,56 @@
+export interface GroceryCategoryDedscriptor {
+  id: string;
+  name: string;
+  subCategories: Array<string>;
+}
+
+export interface GroceryCategory {
+  categoryId: string;
+  subCategory?: string;
+}
+
+export interface GroceryItem {
+  category: string;
+  subCategory?: string;
+  id: string;
+  name: string;
+  images?: Array<string>;
+  singleApproval?: string;
+  noApproval?: string;
+  notQualified?: boolean;
+  warningFlag?: string; 
+  detailsImages?: Array<string>;
+}
+
+export interface LocationDescriptor {
+  id: string,
+  name: string
+}
+
+export interface WineryItem {
+  location: string;
+  id: string;
+  name: string;
+  images?: Array<string>;
+  singleApproval?: string;
+  noApproval?: string;
+  notQualified?: boolean;
+  openSaturday?: string;
+  warningFlag?: string; 
+  detailsImages?: Array<string>;
+}
+
+export interface RestaurantItem {
+  location: string;
+  id: string;
+  name: string;
+  images?: Array<string>;
+  singleApproval?: string;
+  noApproval?: string;
+  fullServiceOnSaturday?: string;
+  notQualified?: boolean;
+  openSaturday?: string;
+  Tzohar?: boolean;
+  warningFlag?: string; 
+  detailsImages?: Array<string>;
+}

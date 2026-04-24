@@ -1,0 +1,18 @@
+@import "./../../assets/styles/global.css";
+
+.items-view-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.items-view-attention {
+  margin-right: 8px;
+}
+
+.items-view-item-titles {
+    font-size: var(--font-size-normal);
+    font-weight: bold;
+    margin-top: var(--size-normal);
+    margin-bottom: var(--size-s);
+    text-align: right;
+}

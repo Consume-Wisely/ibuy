@@ -1,0 +1,36 @@
+@import "./../../../assets/styles/global.css";
+
+.top-menu {
+  display: flex;
+  flex-direction: row;
+  padding-right: var(--global-margin);
+  justify-content: center;
+}
+
+.right-menu {
+  display: flex;
+  align-self: flex-start;
+}
+
+.top-menu-item {
+  display: flex;
+  margin-left: 10px;
+  padding: 2px;
+  font-size: var(--font-size-normal);
+  font-weight: bold; 
+  color: var(--link);
+}
+
+.top-menu-item-selected {
+  background-color: #F4E4C3; 
+}
+
+.top-menu-separator {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #504031;
+  margin: 0 4px 0 0;
+  padding: 0;
+}
+

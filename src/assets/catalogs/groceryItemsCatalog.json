@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "category": "honey",
+      "id": "דבש מכמנים",
+      "name": "דבש מכמנים",
+      "singleApproval": "הרבנות מ.א. משגב"
+    },
+    {
+      "category": "flower",
+      "subCategory": "כוסמין",
+      "id": "קמח כוסמין יצהר",
+      "name": "קמח כוסמין יצהר",
+      "images": ["KusminFlowerWhole.png", "KusminFlowerWhite.png"],
+      "warningFlag": "כתובת על האריזה: יצהר",
+      "detailsImages": ["KusminFlowerBack.png"]
+    }
+  ]
+}
