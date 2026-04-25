@@ -1,6 +1,5 @@
 import { ItemDescription } from "../../../model/globalObjects"
 import { FILTER_ENTRIES, SHOW_WARNINGS } from "../../../utils/constants";
-import { GroceryItemsCatalogManager } from "../../../utils/GroceryItemsCatalogManager";
 import "./ItemsView.css";
 
 export interface ItemsViewProps {
