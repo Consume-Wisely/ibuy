@@ -24,7 +24,7 @@ export const FilterBar = (props: FilterBarProps) => {
       }
       <div className=" app-show-flex">
       <div className="app-button-primary-sm"
-        onClick={() => alert("ברשימה למטה יופיעו כניסות עפ\"י המסומן")}>
+        onClick={() => alert("אופציה זאת עדיין לא פעילה.\nכשהיא תושלם ברשימה למטה יופיעו כניסות עפ\"י המסומן")}>
         סנן
       </div>
     </div></div>

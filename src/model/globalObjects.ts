@@ -1,3 +1,13 @@
+import { FILTER_ENTRIES } from "../utils/constants";
+
+export interface ItemDescription {
+  name: string;
+  icons: Array<string>;
+  comments: Array<[FILTER_ENTRIES, string]>,
+  images?: Array<string>,
+  detailsImages?: Array<string>
+}
+
 export interface GroceryCategoryDedscriptor {
   id: string;
   name: string;

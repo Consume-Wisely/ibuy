@@ -1,14 +1,17 @@
-import { LocationDescriptor, WineryItem } from "../../model/globalObjects";
+import { ItemDescription, LocationDescriptor, WineryItem } from "../../model/globalObjects";
 import { FILTER_ENTRIES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
 import { WineryItemsCatalogManager } from "../../utils/WineryItemsCatalogManager";
 import { FilterBar } from "../shared/FilterBar/FilterBar";
+import { ItemsView } from "../shared/ItemsView/ItemsView";
 import "./Wineries.css";
-import { WineryItemsView } from "./WineryItemsView";
 
 export const Wineries = () => {
   const locations: Array<LocationDescriptor> = LocationsCatalogManager.getLocations();
   const wineries: Array<WineryItem> = WineryItemsCatalogManager.getWineries();
+
+  const wineriesDescriptions: Array<ItemDescription> = 
+    WineryItemsCatalogManager.getWineriesDescriptions(wineries); 
   const allWinery: WineryItem = {
     id: "allWineries",
     name: "כל היקבים",
@@ -23,11 +26,11 @@ export const Wineries = () => {
   const displayedLocations: Array<LocationDescriptor> = [noneLocation, ...locations]
   const displayedWineries: Array<WineryItem> = [allWinery, ...wineries]
   const locationSelectionHandler = (selectedIndex: number) => {
-    alert(`תוצג רשימה של היקבים ב${displayedLocations[selectedIndex].name}`);
+    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם תוצג רשימה של היקבים ב${displayedLocations[selectedIndex].name}`);
   }
 
   const winerySelectionHandler = (selectedIndex: number) => {
-    alert(`יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].name}`);
+    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].name}`);
   }
 
   return (
@@ -66,7 +69,7 @@ export const Wineries = () => {
         ] } />
       </div>
       <div className="margin-top-l">
-        <WineryItemsView items={ wineries } />
+        <ItemsView items={ wineriesDescriptions } warningItems={[]} />
       </div>
 
     </div>

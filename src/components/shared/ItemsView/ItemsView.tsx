@@ -1,16 +1,14 @@
-import { GroceryItem } from "../../model/globalObjects"
-import { SHOW_WARNINGS } from "../../utils/constants";
-import { GroceryItemsCatalogManager } from "../../utils/GroceryItemsCatalogManager";
-import "./../../assets/styles/ItemsView.css";
+import { ItemDescription } from "../../../model/globalObjects"
+import { FILTER_ENTRIES, SHOW_WARNINGS } from "../../../utils/constants";
+import { GroceryItemsCatalogManager } from "../../../utils/GroceryItemsCatalogManager";
+import "./ItemsView.css";
 
 export interface ItemsViewProps {
-  items: Array<GroceryItem>;
+  items: Array<ItemDescription>;
+  warningItems: Array<ItemDescription>;
 }
 
 export const ItemsView = (props: ItemsViewProps) => {
-  const warningItems: Array<GroceryItem> = 
-    GroceryItemsCatalogManager.getWawrningItems(props.items);
-
   return(
     <div>
       <div>
@@ -33,25 +31,28 @@ export const ItemsView = (props: ItemsViewProps) => {
               <tbody>
                 {
                   props.items.map(
-                    (item: GroceryItem) => {
-                      var icons: Array<string> = GroceryItemsCatalogManager.getItemIcons(item);
-                      var comments: Array<string> = GroceryItemsCatalogManager.getItemComments(item);
+                    (item: ItemDescription) => {
                       return(
                         <tr key={item.name}>
                           <td>{ item.name }</td>
                           <td>
                             {
-                              icons.length > 0 &&
-                              icons.map((url: string) => {
+                              item.icons.length > 0 &&
+                              item.icons.map((url: string) => {
                                 return <img src={url} height="32px" alt={url} key={url}/>
                               })
                             }
                           </td>
                           <td>
                             {
-                              comments.length > 0 &&
-                              comments.map((comment: string) => {
-                                return `${comment}   `
+                              item.comments.length > 0 &&
+                              item.comments.map(([title, comment]: [FILTER_ENTRIES, string]) => {
+                                return (
+                                  <span>
+                                    <span className="app-bold">{ title } - </span>
+                                    <span> { comment } </span>
+                                  </span>
+                                ) 
                               })
                             }
 
@@ -67,11 +68,11 @@ export const ItemsView = (props: ItemsViewProps) => {
         </div>
       <div>
         {
-          SHOW_WARNINGS === true && warningItems.length > 0 &&
-            warningItems.map((item: GroceryItem) => {
+          SHOW_WARNINGS === true && props.warningItems.length > 0 &&
+            props.warningItems.map((item: ItemDescription) => {
               return <div key={item.name}>
                 <div className="items-view-item-titles">
-                  {item.name} - { item.warningFlag }
+                  {item.name} - { item.comments[0][0]}: {item.comments[0][1]}
                 </div>
                 <div className="items-view-images">
                   {

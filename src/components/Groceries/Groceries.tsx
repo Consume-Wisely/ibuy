@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { GroceryCategory, GroceryCategoryDedscriptor, GroceryItem } from "../../model/globalObjects";
+import { GroceryCategory, GroceryCategoryDedscriptor, GroceryItem, ItemDescription } from "../../model/globalObjects";
 import { FILTER_ENTRIES } from "../../utils/constants";
 import { GroceryCategoriesCatalogManager } from "../../utils/GroceryCategoriesCatalogManager";
 import { GroceryItemsCatalogManager } from "../../utils/GroceryItemsCatalogManager";
 import { FilterBar } from "./../shared/FilterBar/FilterBar";
 import "./Groceries.css";
-import { ItemsView } from "./ItemsView";
+import { ItemsView } from "../shared/ItemsView/ItemsView";
 
 export const Groceries = () => {
   const categories = GroceryCategoriesCatalogManager.getCategories();
@@ -20,6 +20,12 @@ export const Groceries = () => {
   
   var selectedCategoryDescriptor: GroceryCategoryDedscriptor | undefined =
     GroceryCategoriesCatalogManager.getCategoryDescriptor(selectedCategory.categoryId);
+
+  const itemsDescriptions: Array<ItemDescription> = 
+    GroceryItemsCatalogManager.getItemsDescriptions(groceryItems);
+
+  const warningItemsDescriptions: Array<ItemDescription> = 
+    GroceryItemsCatalogManager.getWarningItemsDescriptions(groceryItems);
 
   const showItems = (selectedCategory: GroceryCategory) => {
     setGroceryItems(GroceryItemsCatalogManager.getItems(selectedCategory));
@@ -80,7 +86,7 @@ export const Groceries = () => {
           }
         </div>
         <div className="groceries-filter-area-left app-clickable"
-          onClick={() => alert("ייפתח עמוד עם רשימת המוצרים ממנו גם אפשר יהיה להוסיף מוצרים")}>
+          onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד עם רשימת המוצרים ממנו גם אפשר יהיה להוסיף מוצרים")}>
           רשימת מוצרים
         </div>
       </div>
@@ -92,7 +98,7 @@ export const Groceries = () => {
         ] } />
       </div>
       <div className="margin-top-normal">
-        <ItemsView items={ groceryItems } />
+        <ItemsView items={ itemsDescriptions } warningItems= { warningItemsDescriptions } />
       </div>
     </div>
   )

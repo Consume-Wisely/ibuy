@@ -1,4 +1,5 @@
-import { WineryItem } from "../model/globalObjects";
+import { ItemDescription, WineryItem } from "../model/globalObjects";
+import { FILTER_ENTRIES } from "./constants";
 
 export class WineryItemsCatalogManager {
   static wineries = require("./../assets/catalogs/wineryItemsCatalog.json").items;
@@ -6,6 +7,22 @@ export class WineryItemsCatalogManager {
   public static getWineries(): Array<WineryItem> {
     return WineryItemsCatalogManager.wineries;
   }
+  
+  public static getWineriesDescriptions(items: Array<WineryItem>): Array<ItemDescription> {
+    var arr: Array<ItemDescription> = [];
+    for (var i=0; i < items.length; i++) { 
+      var item = items[i];
+      arr.push({
+        name: item.name,
+        icons: this.getItemIcons(item),
+        comments: this.getItemComments(item),
+          images: item.images,
+          detailsImages: item.detailsImages
+      });
+    }
+    return arr;
+  }
+
   
   public static getItemIcons(item: WineryItem): Array<string> {
     var list: Array<string> = [];
@@ -28,22 +45,22 @@ export class WineryItemsCatalogManager {
     return list;
   }
 
-  public static getItemComments(item: WineryItem): Array<string> {
-    var list: Array<string> = [];
+  public static getItemComments(item: WineryItem): Array<[FILTER_ENTRIES, string]> {
+    var list: Array<[FILTER_ENTRIES, string]> = [];
     if (item.warningFlag !== undefined) {
-      list.push(`האם מתאים לערכיך? - ${item.warningFlag}`);
+      list.push([FILTER_ENTRIES.WARNING, item.warningFlag]);
     }
     
     if (item.singleApproval !== undefined) {
-      list.push(`כשרות יחידה: ${item.singleApproval}`);
+      list.push([FILTER_ENTRIES.SINGLE_APPROVAL, item.singleApproval]);
     }
 
     if (item.noApproval !== undefined) {
-      list.push(`ללא הכשר: ${item.noApproval}`);
+      list.push([FILTER_ENTRIES.NO_APPROVAL, item.noApproval]);
     }
 
     if (item.openSaturday !== undefined) {
-      list.push(`פתוח בשבת: ${item.openSaturday}`);
+      list.push([FILTER_ENTRIES.OPEN_SATURDAY, item.openSaturday]);
     }
 
     return list;

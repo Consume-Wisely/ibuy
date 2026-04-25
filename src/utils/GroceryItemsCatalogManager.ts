@@ -1,4 +1,5 @@
-import { GroceryCategory, GroceryItem } from "../model/globalObjects";
+import { GroceryCategory, GroceryItem, ItemDescription } from "../model/globalObjects";
+import { FILTER_ENTRIES } from "./constants";
 
 export class GroceryItemsCatalogManager {
   static itemsCatalog = require("./../assets/catalogs/groceryItemsCatalog.json");
@@ -20,6 +21,21 @@ export class GroceryItemsCatalogManager {
       }
     }
     return items;
+  }
+
+  public static getItemsDescriptions(items: Array<GroceryItem>): Array<ItemDescription> {
+    var arr: Array<ItemDescription> = [];
+    for (var i=0; i < items.length; i++) { 
+      var item = items[i];
+      arr.push({
+        name: item.name,
+        icons: this.getItemIcons(item),
+        comments: this.getItemComments(item),
+          images: item.images,
+          detailsImages: item.detailsImages
+      });
+    }
+    return arr;
   }
 
   public static isWarningItem(item: GroceryItem) {
@@ -46,6 +62,23 @@ export class GroceryItemsCatalogManager {
       var item = items[i];
       if (this.isWarningItem(item)) {
         arr.push(item);
+      }
+    }
+    return arr;
+  }
+
+  public static getWarningItemsDescriptions(items: Array<GroceryItem>): Array<ItemDescription> {
+    var arr: Array<ItemDescription> = [];
+    for (var i=0; i < items.length; i++) { 
+      var item = items[i];
+      if (this.isWarningItem(item)) {
+        arr.push({
+          name: item.name,
+          icons: ["resources/icons/warning-flag.png"],
+          comments: [[FILTER_ENTRIES.WARNING, item.warningFlag!]],
+          images: item.images,
+          detailsImages: item.detailsImages
+        });
       }
     }
     return arr;
@@ -80,18 +113,18 @@ export class GroceryItemsCatalogManager {
     return list;
   }
 
-  public static getItemComments(item: GroceryItem): Array<string> {
-    var list: Array<string> = [];
+  public static getItemComments(item: GroceryItem): Array<[FILTER_ENTRIES, string]> {
+    var list: Array<[FILTER_ENTRIES, string]> = [];
     if (item.warningFlag !== undefined) {
-      list.push(`האם מתאים לערכיך? - ${item.warningFlag}`);
+      list.push([FILTER_ENTRIES.WARNING, item.warningFlag]);
     }
     
     if (item.singleApproval !== undefined) {
-      list.push(`כשרות יחידה: ${item.singleApproval}`);
+      list.push([FILTER_ENTRIES.SINGLE_APPROVAL, item.singleApproval]);
     }
 
     if (item.noApproval !== undefined) {
-      list.push(`ללא הכשר: ${item.noApproval}`);
+      list.push([FILTER_ENTRIES.NO_APPROVAL, item.noApproval]);
     }
 
     return list;
