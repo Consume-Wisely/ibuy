@@ -4,6 +4,13 @@ export const enum ENTRIES {
   SERVICES = "SERVICES"
 }
 
+export const enum PAGE_MENU_ENTRIES {
+  HOTELS = "HOTELS",
+  PUBS = "PUBS",
+  RESTAURANTS = "RESTAURANTS",
+  PRESENT_PACKAGES = "",
+  WINE_PACKAGES = "WINE_PACKAGES"
+}
 
 export const enum FILTER_ENTRIES {
   SINGLE_APPROVAL = "הכשר יחיד",

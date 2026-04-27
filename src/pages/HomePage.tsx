@@ -33,6 +33,13 @@ export const HomePage = () => {
               }}>
               נותני שירותים
             </div>
+            <div 
+              className={ "home-page-menu-item app-clickable app-link" }
+              onClick={() => {
+                navigate("/organizations")
+              }}>
+              מוצרים לארגונים
+            </div>
         </div>
     </div>
   )

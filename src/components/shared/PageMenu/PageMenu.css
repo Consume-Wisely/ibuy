@@ -1,0 +1,32 @@
+@import "./../../../assets/styles/global.css";
+
+.page-menu {
+  display: flex;
+  flex-direction: row;
+  padding-right: var(--global-margin);
+  justify-content: center;
+  border-bottom: 1px solid #f7ca76;
+}
+
+.page-menu-item {
+  display: flex;
+  margin-left: 10px;
+  padding: 2px;
+  font-size: var(--font-size-normal);
+  font-weight: 500; 
+  color: var(--link);
+}
+
+.page-menu-item-selected {
+  background-color: #FFF3DC; 
+}
+
+.page-menu-separator {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #504031;
+  margin: 0 4px 0 0;
+  padding: 0;
+}
+
