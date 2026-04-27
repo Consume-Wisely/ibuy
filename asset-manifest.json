@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ibuy/static/css/main.05f0438f.css",
-    "main.js": "/ibuy/static/js/main.6d2d5910.js",
+    "main.css": "/ibuy/static/css/main.bb1c1aa5.css",
+    "main.js": "/ibuy/static/js/main.993d2209.js",
     "static/js/453.4925538b.chunk.js": "/ibuy/static/js/453.4925538b.chunk.js",
     "static/media/ibuy-logo.png": "/ibuy/static/media/ibuy-logo.c8fc15abaeeb478fa437.png",
     "index.html": "/ibuy/index.html",
-    "main.05f0438f.css.map": "/ibuy/static/css/main.05f0438f.css.map",
-    "main.6d2d5910.js.map": "/ibuy/static/js/main.6d2d5910.js.map",
+    "main.bb1c1aa5.css.map": "/ibuy/static/css/main.bb1c1aa5.css.map",
+    "main.993d2209.js.map": "/ibuy/static/js/main.993d2209.js.map",
     "453.4925538b.chunk.js.map": "/ibuy/static/js/453.4925538b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05f0438f.css",
-    "static/js/main.6d2d5910.js"
+    "static/css/main.bb1c1aa5.css",
+    "static/js/main.993d2209.js"
   ]
 }
