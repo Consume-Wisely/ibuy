@@ -32,13 +32,14 @@ export const ItemsView = (props: ItemsViewProps) => {
                   props.items.map(
                     (item: ItemDescription) => {
                       return(
-                        <tr key={item.name}>
+                        <tr key={`items-view-${item.name}`}>
                           <td>{ item.name }</td>
                           <td>
                             {
                               item.icons.length > 0 &&
                               item.icons.map((url: string) => {
-                                return <img src={url} height="32px" alt={url} key={url}/>
+                                return <img src={url} height="32px" alt={url} 
+                                  key={`items-view-${url}`}/>
                               })
                             }
                           </td>
@@ -47,7 +48,7 @@ export const ItemsView = (props: ItemsViewProps) => {
                               item.comments.length > 0 &&
                               item.comments.map(([title, comment]: [FILTER_ENTRIES, string]) => {
                                 return (
-                                  <span>
+                                  <span key={ `items-view-${title}` }>
                                     <span className="app-bold">{ title } - </span>
                                     <span> { comment } </span>
                                   </span>
@@ -69,7 +70,7 @@ export const ItemsView = (props: ItemsViewProps) => {
         {
           SHOW_WARNINGS === true && props.warningItems.length > 0 &&
             props.warningItems.map((item: ItemDescription) => {
-              return <div key={item.name}>
+              return <div key={`items-view-${item.name}-1`}>
                 <div className="items-view-item-titles">
                   {item.name} - { item.comments[0][0]}: {item.comments[0][1]}
                 </div>
@@ -97,7 +98,8 @@ export const ItemsView = (props: ItemsViewProps) => {
                         <div> 
                           {
                             item.detailsImages.map((url: string) => {
-                              return <img src={`resources/groceryItemsImages/${url}`} height="450px" alt={url} key={url}/>
+                              return <img src={`resources/groceryItemsImages/${url}`} height="450px" alt={url} 
+                                key={`items-view-${url}-1`}/>
                             })
                           } 
                         </div>

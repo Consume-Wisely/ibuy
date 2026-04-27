@@ -9,9 +9,9 @@ export const FilterBar = (props: FilterBarProps) => {
   return (
     <div className="filter-bar">
       {
-        props.entries.map((entry) => {
+        props.entries.map((entry, i) => {
           return(
-            <div className="filter-bar-entry">
+            <div className="filter-bar-entry" key={`filter-bar-${entry}`}>
               <div>
                 <input type="checkbox" className="filter-bar-entry-checkbox" value="single" />
               </div>
