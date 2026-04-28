@@ -14,10 +14,11 @@ export class WineryItemsCatalogManager {
       var item = items[i];
       arr.push({
         name: item.name,
+        lastUpdate: item.lastUpdate,
         icons: this.getItemIcons(item),
         comments: this.getItemComments(item),
-          images: item.images,
-          detailsImages: item.detailsImages
+        images: item.images,
+        detailsImages: item.detailsImages
       });
     }
     return arr;

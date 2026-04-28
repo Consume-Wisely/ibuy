@@ -15,6 +15,7 @@ export const Wineries = () => {
   const allWinery: WineryItem = {
     id: "allWineries",
     name: "כל היקבים",
+    lastUpdate: "",
     location: "all"
   };
 

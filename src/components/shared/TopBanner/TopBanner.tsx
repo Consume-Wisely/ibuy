@@ -6,12 +6,17 @@ export const TopBanner = () => {
 
   return (
     <div className="top-banner app-clickable" onClick={() => navigate("/")}>
+
       <div className="top-banner-item">
         <img src='resources/icons/ibuy-logo.png' alt='IBuy Logo' 
           height={64} />
       </div>
       <div className="top-banner-text padding-right-s">
         כל יהודי על-פי דרכו
+      </div>
+      <div className="padding-right-s">
+        <img src='resources/icons/home128.png' alt='IBuy Logo' 
+          height={24} />
       </div>
     </div>
   )

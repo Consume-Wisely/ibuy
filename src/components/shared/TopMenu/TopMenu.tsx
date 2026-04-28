@@ -32,7 +32,7 @@ export const TopMenu = (props: TopMenuProps) => {
               onClick={() => {
                 navigate("/services")
               }}>
-              נותני שירותים
+              נופש והסעדה
             </div>
         </div>
       <hr className="top-menu-separator"/>

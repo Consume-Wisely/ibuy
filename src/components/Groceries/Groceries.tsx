@@ -86,7 +86,7 @@ export const Groceries = () => {
           }
         </div>
         <div className="groceries-filter-area-left app-clickable"
-          onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד עם רשימת המוצרים ממנו גם אפשר יהיה להוסיף מוצרים")}>
+          onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד עם רשימת המוצרים")}>
           רשימת מוצרים
         </div>
       </div>

@@ -31,8 +31,9 @@ export class GroceryItemsCatalogManager {
         name: item.name,
         icons: this.getItemIcons(item),
         comments: this.getItemComments(item),
-          images: item.images,
-          detailsImages: item.detailsImages
+        lastUpdate: item.lastUpdate,
+        images: item.images,
+        detailsImages: item.detailsImages
       });
     }
     return arr;
@@ -74,6 +75,7 @@ export class GroceryItemsCatalogManager {
       if (this.isWarningItem(item)) {
         arr.push({
           name: item.name,
+          lastUpdate: item.lastUpdate,
           icons: ["resources/icons/warning-flag.png"],
           comments: [[FILTER_ENTRIES.WARNING, item.warningFlag!]],
           images: item.images,

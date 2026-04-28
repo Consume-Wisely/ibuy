@@ -3,9 +3,10 @@ import { FILTER_ENTRIES } from "../utils/constants";
 export interface ItemDescription {
   name: string;
   icons: Array<string>;
-  comments: Array<[FILTER_ENTRIES, string]>,
-  images?: Array<string>,
-  detailsImages?: Array<string>
+  comments: Array<[FILTER_ENTRIES, string]>;
+  lastUpdate: string;
+  images?: Array<string>;
+  detailsImages?: Array<string>;
 }
 
 export interface GroceryCategoryDedscriptor {
@@ -24,6 +25,7 @@ export interface GroceryItem {
   subCategory?: string;
   id: string;
   name: string;
+  lastUpdate: string;
   images?: Array<string>;
   singleApproval?: string;
   noApproval?: string;
@@ -41,6 +43,7 @@ export interface WineryItem {
   location: string;
   id: string;
   name: string;
+  lastUpdate: string;
   images?: Array<string>;
   singleApproval?: string;
   noApproval?: string;
@@ -54,6 +57,7 @@ export interface RestaurantItem {
   location: string;
   id: string;
   name: string;
+  lastUpdate: string;
   images?: Array<string>;
   singleApproval?: string;
   noApproval?: string;

@@ -31,7 +31,7 @@ export const HomePage = () => {
               onClick={() => {
                 navigate("/services")
               }}>
-              נותני שירותים
+              נופש והסעדה
             </div>
             <div 
               className={ "home-page-menu-item app-clickable app-link" }

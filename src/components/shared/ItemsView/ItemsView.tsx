@@ -25,6 +25,9 @@ export const ItemsView = (props: ItemsViewProps) => {
                   <th>
                     הערות
                   </th>
+                  <th>
+                    עדכון אחרון
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -56,6 +59,9 @@ export const ItemsView = (props: ItemsViewProps) => {
                               })
                             }
 
+                          </td>
+                          <td>
+                            { item.lastUpdate }
                           </td>
                         </tr>
                       )
