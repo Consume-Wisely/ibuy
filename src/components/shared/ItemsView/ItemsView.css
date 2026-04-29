@@ -16,3 +16,11 @@
     margin-bottom: var(--size-s);
     text-align: right;
 }
+
+.items-view-item-comments {
+  display: flex;
+    font-size: var(--font-size-normal);
+    margin-top: var(--size-xs);
+    font-weight: normal;
+    text-align: right;
+}

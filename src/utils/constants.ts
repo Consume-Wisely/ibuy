@@ -19,5 +19,3 @@ export const enum FILTER_ENTRIES {
   OPEN_SATURDAY = "פתוח בשבת",
   WARNING = "מתאים לך?"
 }
-
-export const SHOW_WARNINGS: boolean = false;

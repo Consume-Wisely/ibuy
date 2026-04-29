@@ -1,5 +1,6 @@
+import { useRef, useState } from "react";
 import { ItemDescription } from "../../../model/globalObjects"
-import { FILTER_ENTRIES, SHOW_WARNINGS } from "../../../utils/constants";
+import { FILTER_ENTRIES } from "../../../utils/constants";
 import "./ItemsView.css";
 
 export interface ItemsViewProps {
@@ -8,6 +9,16 @@ export interface ItemsViewProps {
 }
 
 export const ItemsView = (props: ItemsViewProps) => {
+  const [shownItemDetails, setShownItemDetails] = 
+    useState<ItemDescription | undefined>(undefined);
+  const prevItems = useRef<Array<ItemDescription>>(props.items);
+  const showDetails = useRef<boolean>(false);
+
+  if (prevItems.current !== props.items) {
+    showDetails.current = false;
+    prevItems.current = props.items;
+  }
+
   return(
     <div>
       <div>
@@ -35,9 +46,15 @@ export const ItemsView = (props: ItemsViewProps) => {
                   props.items.map(
                     (item: ItemDescription) => {
                       return(
-                        <tr key={`items-view-${item.name}`}>
-                          <td>{ item.name }</td>
+                        <tr key={`items-view-${item.name}`} className="app-clickable" onClick={() => {
+                            setShownItemDetails(item);
+                            showDetails.current = true;
+                          }} >
                           <td>
+                            { item.name }
+                          </td>
+                          <td>
+                            <div className="app-center">
                             {
                               item.icons.length > 0 &&
                               item.icons.map((url: string) => {
@@ -45,6 +62,7 @@ export const ItemsView = (props: ItemsViewProps) => {
                                   key={`items-view-${url}`}/>
                               })
                             }
+                            </div>
                           </td>
                           <td>
                             {
@@ -61,7 +79,9 @@ export const ItemsView = (props: ItemsViewProps) => {
 
                           </td>
                           <td>
-                            { item.lastUpdate }
+                            <div className="app-center">                           
+                              { item.lastUpdate }
+                            </div>
                           </td>
                         </tr>
                       )
@@ -74,20 +94,30 @@ export const ItemsView = (props: ItemsViewProps) => {
         </div>
       <div>
         {
-          SHOW_WARNINGS === true && props.warningItems.length > 0 &&
-            props.warningItems.map((item: ItemDescription) => {
-              return <div key={`items-view-${item.name}-1`}>
+          shownItemDetails !== undefined && showDetails.current === true &&
+               <div key={`items-view-${shownItemDetails.name}-1`}>
                 <div className="items-view-item-titles">
-                  {item.name} - { item.comments[0][0]}: {item.comments[0][1]}
+                  {shownItemDetails.name}
+                  {
+                    shownItemDetails.comments.map((comment, i) => {
+                      const url = shownItemDetails.icons[i];
+                      return(
+                        <div key={ i } className="items-view-item-comments">
+                          <img src={url} height="24px" alt={url} className="margin-left-s" />
+                          { comment[0]}: {comment[1]}
+                        </div>
+                      )
+                    })
+                  }
                 </div>
                 <div className="items-view-images">
                   {
-                    item.images !== undefined && item.images.length > 0 &&
+                    shownItemDetails.images !== undefined && shownItemDetails.images.length > 0 &&
                       <div>
                         <div className="app-bold padding-bottom-l">המוצר</div>
                         <div> 
                           {
-                            item.images.map((url: string) => {
+                            shownItemDetails.images.map((url: string) => {
                               return <img src={`resources/groceryItemsImages/${url}`} height="150px" alt={url} key={url}/>
                             })
                           } 
@@ -95,7 +125,8 @@ export const ItemsView = (props: ItemsViewProps) => {
                       </div>
                   }
                   {
-                    item.detailsImages !== undefined && item.detailsImages.length > 0 &&
+                    shownItemDetails.detailsImages !== undefined && 
+                      shownItemDetails.detailsImages.length > 0 &&
                       <div className="items-view-attention">
                         <div className="app-show-flex-row app-bold">
                           <div><img src="resources/icons/warning-flag.png" height="32px" alt="warning" /></div>
@@ -103,7 +134,7 @@ export const ItemsView = (props: ItemsViewProps) => {
                         </div>
                         <div> 
                           {
-                            item.detailsImages.map((url: string) => {
+                            shownItemDetails.detailsImages.map((url: string) => {
                               return <img src={`resources/groceryItemsImages/${url}`} height="450px" alt={url} 
                                 key={`items-view-${url}-1`}/>
                             })
@@ -113,7 +144,6 @@ export const ItemsView = (props: ItemsViewProps) => {
                   }
                 </div>
               </div>
-            })
         }
       </div>
       
