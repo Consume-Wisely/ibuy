@@ -1,5 +1,5 @@
 import { ItemDescription, WineryItem } from "../model/globalObjects";
-import { FILTER_ENTRIES } from "./constants";
+import { ITEM_ATTRIBUTES } from "./constants";
 
 export class WineryItemsCatalogManager {
   static wineries = require("./../assets/catalogs/wineryItemsCatalog.json").items;
@@ -16,7 +16,7 @@ export class WineryItemsCatalogManager {
         name: item.name,
         lastUpdate: item.lastUpdate,
         icons: this.getItemIcons(item),
-        comments: this.getItemComments(item),
+        attributes: this.getItemAttributes(item),
         images: item.images,
         detailsImages: item.detailsImages
       });
@@ -46,22 +46,22 @@ export class WineryItemsCatalogManager {
     return list;
   }
 
-  public static getItemComments(item: WineryItem): Array<[FILTER_ENTRIES, string]> {
-    var list: Array<[FILTER_ENTRIES, string]> = [];
+  public static getItemAttributes(item: WineryItem): Array<[ITEM_ATTRIBUTES, string]> {
+    var list: Array<[ITEM_ATTRIBUTES, string]> = [];
     if (item.warningFlag !== undefined) {
-      list.push([FILTER_ENTRIES.WARNING, item.warningFlag]);
+      list.push([ITEM_ATTRIBUTES.WARNING, item.warningFlag]);
     }
     
     if (item.singleApproval !== undefined) {
-      list.push([FILTER_ENTRIES.SINGLE_APPROVAL, item.singleApproval]);
+      list.push([ITEM_ATTRIBUTES.SINGLE_APPROVAL, item.singleApproval]);
     }
 
     if (item.noApproval !== undefined) {
-      list.push([FILTER_ENTRIES.NO_APPROVAL, item.noApproval]);
+      list.push([ITEM_ATTRIBUTES.NO_APPROVAL, item.noApproval]);
     }
 
     if (item.openSaturday !== undefined) {
-      list.push([FILTER_ENTRIES.OPEN_SATURDAY, item.openSaturday]);
+      list.push([ITEM_ATTRIBUTES.OPEN_SATURDAY, item.openSaturday]);
     }
 
     return list;

@@ -1,9 +1,9 @@
-import { FILTER_ENTRIES } from "../utils/constants";
+import { ITEM_ATTRIBUTES } from "../utils/constants";
 
 export interface ItemDescription {
   name: string;
   icons: Array<string>;
-  comments: Array<[FILTER_ENTRIES, string]>;
+  attributes: Array<[ITEM_ATTRIBUTES, string]>;
   lastUpdate: string;
   images?: Array<string>;
   detailsImages?: Array<string>;

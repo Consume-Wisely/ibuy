@@ -1,5 +1,5 @@
 import { GroceryCategory, GroceryItem, ItemDescription } from "../model/globalObjects";
-import { FILTER_ENTRIES } from "./constants";
+import { ITEM_ATTRIBUTES } from "./constants";
 
 export class GroceryItemsCatalogManager {
   static itemsCatalog = require("./../assets/catalogs/groceryItemsCatalog.json");
@@ -30,7 +30,7 @@ export class GroceryItemsCatalogManager {
       arr.push({
         name: item.name,
         icons: this.getItemIcons(item),
-        comments: this.getItemComments(item),
+        attributes: this.getItemAttributes(item),
         lastUpdate: item.lastUpdate,
         images: item.images,
         detailsImages: item.detailsImages
@@ -77,7 +77,7 @@ export class GroceryItemsCatalogManager {
           name: item.name,
           lastUpdate: item.lastUpdate,
           icons: ["resources/icons/warning-flag.png"],
-          comments: [[FILTER_ENTRIES.WARNING, item.warningFlag!]],
+          attributes: [[ITEM_ATTRIBUTES.WARNING, item.warningFlag!]],
           images: item.images,
           detailsImages: item.detailsImages
         });
@@ -115,18 +115,18 @@ export class GroceryItemsCatalogManager {
     return list;
   }
 
-  public static getItemComments(item: GroceryItem): Array<[FILTER_ENTRIES, string]> {
-    var list: Array<[FILTER_ENTRIES, string]> = [];
+  public static getItemAttributes(item: GroceryItem): Array<[ITEM_ATTRIBUTES, string]> {
+    var list: Array<[ITEM_ATTRIBUTES, string]> = [];
     if (item.warningFlag !== undefined) {
-      list.push([FILTER_ENTRIES.WARNING, item.warningFlag]);
+      list.push([ITEM_ATTRIBUTES.WARNING, item.warningFlag]);
     }
     
     if (item.singleApproval !== undefined) {
-      list.push([FILTER_ENTRIES.SINGLE_APPROVAL, item.singleApproval]);
+      list.push([ITEM_ATTRIBUTES.SINGLE_APPROVAL, item.singleApproval]);
     }
 
     if (item.noApproval !== undefined) {
-      list.push([FILTER_ENTRIES.NO_APPROVAL, item.noApproval]);
+      list.push([ITEM_ATTRIBUTES.NO_APPROVAL, item.noApproval]);
     }
 
     return list;

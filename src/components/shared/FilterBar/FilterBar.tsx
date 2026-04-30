@@ -1,8 +1,8 @@
-import { FILTER_ENTRIES } from "../../../utils/constants";
+import { ITEM_ATTRIBUTES } from "../../../utils/constants";
 import "./FilterBar.css";
 
 export interface FilterBarProps {
-  entries: Array<FILTER_ENTRIES>
+  entries: Array<ITEM_ATTRIBUTES>
 }
 
 export const FilterBar = (props: FilterBarProps) => {

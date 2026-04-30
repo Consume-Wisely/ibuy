@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GroceryCategory, GroceryCategoryDedscriptor, GroceryItem, ItemDescription } from "../../model/globalObjects";
-import { FILTER_ENTRIES } from "../../utils/constants";
+import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { GroceryCategoriesCatalogManager } from "../../utils/GroceryCategoriesCatalogManager";
 import { GroceryItemsCatalogManager } from "../../utils/GroceryItemsCatalogManager";
 import { FilterBar } from "./../shared/FilterBar/FilterBar";
@@ -92,9 +92,9 @@ export const Groceries = () => {
       </div>
       <div className="margin-top-normal">
         <FilterBar entries={ [
-          FILTER_ENTRIES.SINGLE_APPROVAL,
-          FILTER_ENTRIES.NO_APPROVAL,
-          FILTER_ENTRIES.NOT_QUALIFIED
+          ITEM_ATTRIBUTES.SINGLE_APPROVAL,
+          ITEM_ATTRIBUTES.NO_APPROVAL,
+          ITEM_ATTRIBUTES.NOT_QUALIFIED
         ] } />
       </div>
       <div className="margin-top-normal">

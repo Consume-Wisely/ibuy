@@ -1,5 +1,5 @@
 import { ItemDescription, LocationDescriptor, WineryItem } from "../../model/globalObjects";
-import { FILTER_ENTRIES } from "../../utils/constants";
+import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
 import { WineryItemsCatalogManager } from "../../utils/WineryItemsCatalogManager";
 import { FilterBar } from "../shared/FilterBar/FilterBar";
@@ -64,9 +64,9 @@ export const Wineries = () => {
       </div>
       <div className="margin-top-l">
         <FilterBar entries={ [
-          FILTER_ENTRIES.SINGLE_APPROVAL,
-          FILTER_ENTRIES.NO_APPROVAL,
-          FILTER_ENTRIES.OPEN_SATURDAY
+          ITEM_ATTRIBUTES.SINGLE_APPROVAL,
+          ITEM_ATTRIBUTES.NO_APPROVAL,
+          ITEM_ATTRIBUTES.OPEN_SATURDAY
         ] } />
       </div>
       <div className="margin-top-l">

@@ -12,7 +12,7 @@ export const enum PAGE_MENU_ENTRIES {
   WINE_PACKAGES = "WINE_PACKAGES"
 }
 
-export const enum FILTER_ENTRIES {
+export const enum ITEM_ATTRIBUTES {
   SINGLE_APPROVAL = "הכשר יחיד",
   NO_APPROVAL = "ללא הכשר",
   NOT_QUALIFIED = "לא כשר",

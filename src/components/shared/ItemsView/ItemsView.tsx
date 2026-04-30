@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { ItemDescription } from "../../../model/globalObjects"
-import { FILTER_ENTRIES } from "../../../utils/constants";
+import { ITEM_ATTRIBUTES } from "../../../utils/constants";
 import "./ItemsView.css";
 
 export interface ItemsViewProps {
@@ -66,8 +66,8 @@ export const ItemsView = (props: ItemsViewProps) => {
                           </td>
                           <td>
                             {
-                              item.comments.length > 0 &&
-                              item.comments.map(([title, comment]: [FILTER_ENTRIES, string]) => {
+                              item.attributes.length > 0 &&
+                              item.attributes.map(([title, comment]: [ITEM_ATTRIBUTES, string]) => {
                                 return (
                                   <span key={ `items-view-${title}` }>
                                     <span className="app-bold">{ title } - </span>
@@ -99,12 +99,12 @@ export const ItemsView = (props: ItemsViewProps) => {
                 <div className="items-view-item-titles">
                   {shownItemDetails.name}
                   {
-                    shownItemDetails.comments.map((comment, i) => {
+                    shownItemDetails.attributes.map((attr, i) => {
                       const url = shownItemDetails.icons[i];
                       return(
-                        <div key={ i } className="items-view-item-comments">
+                        <div key={ i } className="items-view-item-attributes">
                           <img src={url} height="24px" alt={url} className="margin-left-s" />
-                          { comment[0]}: {comment[1]}
+                          { attr[0]}: {attr[1]}
                         </div>
                       )
                     })

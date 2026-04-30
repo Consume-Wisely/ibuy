@@ -17,7 +17,7 @@
     text-align: right;
 }
 
-.items-view-item-comments {
+.items-view-item-attributes {
   display: flex;
     font-size: var(--font-size-normal);
     margin-top: var(--size-xs);
