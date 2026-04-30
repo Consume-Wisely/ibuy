@@ -1,10 +1,22 @@
 [
   {
-    "id": "golan",
-    "name": "רמת הגולן"
+    "id": "bar-giora",
+    "name": "בר גיורא"
   },
   {
     "id": "binyamina",
     "name": "בנימינה"
+  },
+  {
+    "id": "harel",
+    "name": "קיבוץ הראל"
+  },
+  {
+    "id": "golaein-zivan",
+    "name": "עין זיוון"
+  },
+  {
+    "id": "kidmat-zvi",
+    "name": "קדמת צבי"
   }
 ]
