@@ -24,6 +24,13 @@ export const ItemsView = (props: ItemsViewProps) => {
       <div>
         {
           props.items.length > 0 &&
+          <div>
+            <div className="app-show-flex app-indent-right-08 margin-bottom-xs">
+              <img src="resources/icons/info.png" height={"16px"} alt="info"/>
+              <div className="app-indent-right-08 font-size-s">
+                הקלק על שורה לראות פרטים נוספים
+              </div>
+            </div>
             <table className="app-table">
               <thead>
                 <tr>
@@ -91,6 +98,7 @@ export const ItemsView = (props: ItemsViewProps) => {
                 }
               </tbody>
             </table>
+            </div>
           }
         </div>
       <div>
