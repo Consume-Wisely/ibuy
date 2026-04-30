@@ -318,6 +318,14 @@ a {
   margin-left: var(--size-s);
 }
 
+.margin-right-l {
+  margin-right: var(--size-l);
+}
+
+.margin-right-s {
+  margin-right: var(--size-s);
+}
+
 .padding-bottom-xs {
   padding-bottom: var(--size-xs);
 }
