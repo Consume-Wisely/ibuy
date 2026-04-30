@@ -9,7 +9,7 @@ export const HomePage = () => {
     <div className="app-page">
       <div className="app-indent-top-16">
         <img src={ iBuyLogo } alt='IBuy Logo' 
-          height={300}/>
+          height={200}/>
       </div>
           <div className="home-page-menu">
             <div 
