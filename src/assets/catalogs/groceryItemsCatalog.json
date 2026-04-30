@@ -3,19 +3,43 @@
     {
       "category": "honey",
       "id": "דבש מכמנים",
-      "name": "דבש מכמנים",
-      "singleApproval": "הרבנות מ.א. משגב",
-      "lastUpdate": "28-04-2026"
+      "description": {
+        "name": "דבש מכמנים",
+        "lastUpdate": "28-04-2026",
+        "overview": "",
+        "attributes": [
+          ["SINGLE_APPROVAL", "הרבנות מ.א. משגב"]
+        ]
+      }
     },
     {
       "category": "flower",
       "subCategory": "כוסמין",
-      "id": "קמח כוסמין יצהר",
-      "name": "קמח כוסמין יצהר",
-      "images": ["KusminFlowerWhole.png", "KusminFlowerWhite.png"],
-      "warningFlag": "כתובת על האריזה: יצהר",
-      "detailsImages": ["KusminFlowerBack.png"],
-      "lastUpdate": "28-04-2026"
+      "id": "קמח כוסמין מלא יצהר",
+      "description": {
+        "name": "קמח כוסמין מלא",
+        "images": ["KusminFlowerWhole.png"],
+        "lastUpdate": "28-04-2026",
+        "detailsImages": ["KusminFlowerBack.png"],
+        "overview": "",
+        "attributes": [
+          ["WARNING", "כתובת על האריזה: יצהר"]
+        ]
+      }
+    },
+    {
+      "category": "flower",
+      "subCategory": "כוסמין",
+      "id": "קמח כוסמין לבן יצהר",
+      "description": {
+        "name": "קמח כוסמין לבן",
+        "images": ["KusminFlowerWhite.png"],
+        "lastUpdate": "28-04-2026",
+        "overview": "",
+        "attributes": [
+          ["WARNING", "כתובת על האריזה: יצהר"]
+        ]
+      }
     }
   ]
 }

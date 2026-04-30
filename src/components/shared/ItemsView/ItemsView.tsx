@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { ItemDescription } from "../../../model/globalObjects"
 import { ITEM_ATTRIBUTES } from "../../../utils/constants";
+import { ModelVisualUtils } from "../../../utils/ModelVisualUtils";
 import "./ItemsView.css";
 
 export interface ItemsViewProps {
   items: Array<ItemDescription>;
-  warningItems: Array<ItemDescription>;
 }
 
 export const ItemsView = (props: ItemsViewProps) => {
@@ -45,6 +45,7 @@ export const ItemsView = (props: ItemsViewProps) => {
                 {
                   props.items.map(
                     (item: ItemDescription) => {
+                      const icons = ModelVisualUtils.getItemIcons(item.attributes);
                       return(
                         <tr key={`items-view-${item.name}`} className="app-clickable" onClick={() => {
                             setShownItemDetails(item);
@@ -56,8 +57,8 @@ export const ItemsView = (props: ItemsViewProps) => {
                           <td>
                             <div className="app-center">
                             {
-                              item.icons.length > 0 &&
-                              item.icons.map((url: string) => {
+                              icons.length > 0 &&
+                              icons.map((url: string) => {
                                 return <img src={url} height="32px" alt={url} 
                                   key={`items-view-${url}`}/>
                               })
@@ -67,11 +68,11 @@ export const ItemsView = (props: ItemsViewProps) => {
                           <td>
                             {
                               item.attributes.length > 0 &&
-                              item.attributes.map(([title, comment]: [ITEM_ATTRIBUTES, string]) => {
+                              item.attributes.map(([title, attr]: [ITEM_ATTRIBUTES, string]) => {
                                 return (
                                   <span key={ `items-view-${title}` }>
-                                    <span className="app-bold">{ title } - </span>
-                                    <span> { comment } </span>
+                                    <span className="app-bold">{ ModelVisualUtils.getAttributeTitle(title) }</span>
+                                    <span> {attr.length > 0 ? ` - ${attr}` : ""} </span>
                                   </span>
                                 ) 
                               })
@@ -98,13 +99,19 @@ export const ItemsView = (props: ItemsViewProps) => {
                <div key={`items-view-${shownItemDetails.name}-1`}>
                 <div className="items-view-item-titles">
                   {shownItemDetails.name}
+                  { shownItemDetails.overview !== undefined && shownItemDetails.overview.length > 0 &&
+                    <div className="items-view-item-overview">
+                      { shownItemDetails.overview }
+                    </div>
+                  }
                   {
                     shownItemDetails.attributes.map((attr, i) => {
-                      const url = shownItemDetails.icons[i];
+                      const url = ModelVisualUtils.getAttributeIcon(attr[0]);
                       return(
                         <div key={ i } className="items-view-item-attributes">
                           <img src={url} height="24px" alt={url} className="margin-left-s" />
-                          { attr[0]}: {attr[1]}
+                          { ModelVisualUtils.getAttributeTitle(attr[0])} 
+                          {attr[1].length > 0 ? `: ${attr[1]}` : ""}
                         </div>
                       )
                     })

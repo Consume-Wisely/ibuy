@@ -1,4 +1,5 @@
 import { ITEM_ATTRIBUTES } from "../../../utils/constants";
+import { ModelVisualUtils } from "../../../utils/ModelVisualUtils";
 import "./FilterBar.css";
 
 export interface FilterBarProps {
@@ -16,7 +17,7 @@ export const FilterBar = (props: FilterBarProps) => {
                 <input type="checkbox" className="filter-bar-entry-checkbox" value="single" />
               </div>
               <div>
-                { entry } 
+                { ModelVisualUtils.getAttributeTitle(entry) } 
               </div>
             </div>
           )  

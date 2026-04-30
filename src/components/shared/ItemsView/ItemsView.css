@@ -17,6 +17,14 @@
     text-align: right;
 }
 
+.items-view-item-overview {
+    font-size: var(--font-size-normal);
+    margin-top: var(--size-normal);
+    margin-bottom: var(--size-s);
+    font-weight: normal;
+    text-align: right;
+}
+
 .items-view-item-attributes {
   display: flex;
     font-size: var(--font-size-normal);

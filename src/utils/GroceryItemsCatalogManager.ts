@@ -4,6 +4,15 @@ import { ITEM_ATTRIBUTES } from "./constants";
 export class GroceryItemsCatalogManager {
   static itemsCatalog = require("./../assets/catalogs/groceryItemsCatalog.json");
   
+  static getItemsDescriptions(groceryItems: GroceryItem[]): Array<ItemDescription> {
+    var list: Array<ItemDescription> = [];
+    for (var i=0; i < groceryItems.length; i++) {
+      var item = groceryItems[i];
+      list.push(item.description);
+    }
+    return list;
+  }
+
   public static getItems(category: GroceryCategory): Array<GroceryItem> {
     const catalogItems: Array<GroceryItem> = this.itemsCatalog.items;
     var items: Array<GroceryItem> = [];
@@ -23,25 +32,13 @@ export class GroceryItemsCatalogManager {
     return items;
   }
 
-  public static getItemsDescriptions(items: Array<GroceryItem>): Array<ItemDescription> {
-    var arr: Array<ItemDescription> = [];
-    for (var i=0; i < items.length; i++) { 
-      var item = items[i];
-      arr.push({
-        name: item.name,
-        icons: this.getItemIcons(item),
-        attributes: this.getItemAttributes(item),
-        lastUpdate: item.lastUpdate,
-        images: item.images,
-        detailsImages: item.detailsImages
-      });
-    }
-    return arr;
-  }
-
   public static isWarningItem(item: GroceryItem) {
-    if (item.warningFlag !== undefined && item.warningFlag.length > 0) {
-      return true;
+    var attrs = item.description.attributes;
+    for (var i=0; i < attrs.length; i++) {
+      const attr = attrs[i];
+      if (attr[0] === ITEM_ATTRIBUTES.WARNING && attr[1].length > 0) {
+        return true;
+      }
     }
     return false;
   }
@@ -66,69 +63,5 @@ export class GroceryItemsCatalogManager {
       }
     }
     return arr;
-  }
-
-  public static getWarningItemsDescriptions(items: Array<GroceryItem>): Array<ItemDescription> {
-    var arr: Array<ItemDescription> = [];
-    for (var i=0; i < items.length; i++) { 
-      var item = items[i];
-      if (this.isWarningItem(item)) {
-        arr.push({
-          name: item.name,
-          lastUpdate: item.lastUpdate,
-          icons: ["resources/icons/warning-flag.png"],
-          attributes: [[ITEM_ATTRIBUTES.WARNING, item.warningFlag!]],
-          images: item.images,
-          detailsImages: item.detailsImages
-        });
-      }
-    }
-    return arr;
-  }
-
-  /*
-    Relevant object attributes:
-    images?: Array<string>;
-    X  singleApproval?: string;
-    noApproval?: string;
-    fullServiceOnSaturday?: string;
-    notQualified?: boolean;
-    openSaturday?: boolean;
-    Tzohar?: boolean;
-    X  warningFlag?: string; 
-    X  detailsImages?: Array<string>;
-  */
-  public static getItemIcons(item: GroceryItem): Array<string> {
-    var list: Array<string> = [];
-    if (item.warningFlag !== undefined) {
-      list.push("resources/icons/warning-flag.png");
-    }
-
-    if (item.singleApproval !== undefined) {
-      list.push("resources/icons/single-approval.png");
-    }
-
-    if (item.noApproval !== undefined) {
-      list.push("resources/icons/no-approval.png");
-    }
-
-    return list;
-  }
-
-  public static getItemAttributes(item: GroceryItem): Array<[ITEM_ATTRIBUTES, string]> {
-    var list: Array<[ITEM_ATTRIBUTES, string]> = [];
-    if (item.warningFlag !== undefined) {
-      list.push([ITEM_ATTRIBUTES.WARNING, item.warningFlag]);
-    }
-    
-    if (item.singleApproval !== undefined) {
-      list.push([ITEM_ATTRIBUTES.SINGLE_APPROVAL, item.singleApproval]);
-    }
-
-    if (item.noApproval !== undefined) {
-      list.push([ITEM_ATTRIBUTES.NO_APPROVAL, item.noApproval]);
-    }
-
-    return list;
   }
 }

@@ -24,9 +24,6 @@ export const Groceries = () => {
   const itemsDescriptions: Array<ItemDescription> = 
     GroceryItemsCatalogManager.getItemsDescriptions(groceryItems);
 
-  const warningItemsDescriptions: Array<ItemDescription> = 
-    GroceryItemsCatalogManager.getWarningItemsDescriptions(groceryItems);
-
   const showItems = (selectedCategory: GroceryCategory) => {
     setGroceryItems(GroceryItemsCatalogManager.getItems(selectedCategory));
   }
@@ -98,7 +95,7 @@ export const Groceries = () => {
         ] } />
       </div>
       <div className="margin-top-normal">
-        <ItemsView items={ itemsDescriptions } warningItems= { warningItemsDescriptions } />
+        <ItemsView items={ itemsDescriptions } />
       </div>
     </div>
   )

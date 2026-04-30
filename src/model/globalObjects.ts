@@ -2,7 +2,7 @@ import { ITEM_ATTRIBUTES } from "../utils/constants";
 
 export interface ItemDescription {
   name: string;
-  icons: Array<string>;
+  overview: string;
   attributes: Array<[ITEM_ATTRIBUTES, string]>;
   lastUpdate: string;
   images?: Array<string>;
@@ -24,14 +24,7 @@ export interface GroceryItem {
   category: string;
   subCategory?: string;
   id: string;
-  name: string;
-  lastUpdate: string;
-  images?: Array<string>;
-  singleApproval?: string;
-  noApproval?: string;
-  notQualified?: boolean;
-  warningFlag?: string; 
-  detailsImages?: Array<string>;
+  description: ItemDescription;
 }
 
 export interface LocationDescriptor {
@@ -42,15 +35,7 @@ export interface LocationDescriptor {
 export interface WineryItem {
   location: string;
   id: string;
-  name: string;
-  lastUpdate: string;
-  images?: Array<string>;
-  singleApproval?: string;
-  noApproval?: string;
-  notQualified?: boolean;
-  openSaturday?: string;
-  warningFlag?: string; 
-  detailsImages?: Array<string>;
+  description: ItemDescription;
 }
 
 export interface RestaurantItem {

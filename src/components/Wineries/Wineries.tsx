@@ -11,12 +11,16 @@ export const Wineries = () => {
   const wineries: Array<WineryItem> = WineryItemsCatalogManager.getWineries();
 
   const wineriesDescriptions: Array<ItemDescription> = 
-    WineryItemsCatalogManager.getWineriesDescriptions(wineries); 
+    WineryItemsCatalogManager.getItemsDescriptions(wineries); 
   const allWinery: WineryItem = {
     id: "allWineries",
-    name: "כל היקבים",
-    lastUpdate: "",
-    location: "all"
+    description: {
+      name: "כל היקבים",
+      lastUpdate: "",
+      overview: "",
+      attributes: []
+    },
+    location: "all",
   };
 
   const noneLocation: LocationDescriptor = {
@@ -31,7 +35,7 @@ export const Wineries = () => {
   }
 
   const winerySelectionHandler = (selectedIndex: number) => {
-    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].name}`);
+    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].description.name}`);
   }
 
   return (
@@ -55,7 +59,7 @@ export const Wineries = () => {
             {
               displayedWineries.map((win: WineryItem) => {
                 return(
-                  <option key={ win.id }>{ win.name }</option>
+                  <option key={ win.id }>{ win.description.name }</option>
                 )
               })
             }
@@ -70,7 +74,7 @@ export const Wineries = () => {
         ] } />
       </div>
       <div className="margin-top-l">
-        <ItemsView items={ wineriesDescriptions } warningItems={[]} />
+        <ItemsView items={ wineriesDescriptions } />
       </div>
 
     </div>
