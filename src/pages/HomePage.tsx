@@ -40,6 +40,13 @@ export const HomePage = () => {
               }}>
               מוצרים לארגונים
             </div>
+            <div 
+              className={ "home-page-menu-item-salute app-clickable app-link" }
+              onClick={() => {
+                navigate("/salute")
+              }}>
+              מפרגנים
+            </div>
         </div>
     </div>
   )
