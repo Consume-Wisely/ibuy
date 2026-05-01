@@ -36,3 +36,24 @@
 .items-list-table {
   width: fit-content;
 }
+
+.items-list-details {
+  position: absolute;
+  top: 110px;
+  right: 10px;
+  background-color: var(--light-blue-00); 
+  padding: 10px; 
+  border: solid 1px var(--blue-03)
+}
+
+.items-list-details-popup-hide {
+  display: none;
+}
+
+.items-list-details-popup-show {
+  display: block;
+}
+
+.item-details-area {
+  text-align: right;
+}

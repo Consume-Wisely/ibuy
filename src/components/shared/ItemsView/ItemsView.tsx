@@ -11,17 +11,15 @@ export interface ItemsViewProps {
 export const ItemsView = (props: ItemsViewProps) => {
   const [shownItemDetails, setShownItemDetails] = 
     useState<ItemDescription | undefined>(undefined);
-  const prevItems = useRef<Array<ItemDescription>>(props.items);
-  const showDetails = useRef<boolean>(false);
+  const [showDetails, setShowDetails] = useState<string>("items-list-details-popup-hide");
 
   const selectionHandler = (item: ItemDescription) => {
     setShownItemDetails(item);
-    showDetails.current = true;
+    setShowDetails("items-list-details-popup-show")
   }
 
-  if (prevItems.current !== props.items) {
-    showDetails.current = false;
-    prevItems.current = props.items;
+  const popupCloseHandler = () => {
+    setShowDetails("items-list-details-popup-hide");
   }
 
   return(
@@ -29,10 +27,10 @@ export const ItemsView = (props: ItemsViewProps) => {
       <div>
         <ItemsList items={props.items} onSelect={ (item: ItemDescription) => selectionHandler(item) } />
       </div>
-      <div>
+      <div className={ `items-list-details ${showDetails}` } >
         {
-          shownItemDetails !== undefined && showDetails.current === true &&
-          <ItemDetails item={shownItemDetails!} />
+          shownItemDetails !== undefined && 
+          <ItemDetails item={shownItemDetails!} closeHandler={ popupCloseHandler } />
         }
       </div>
     </div>
