@@ -12,11 +12,27 @@
     "name": "הראל"
   },
   {
+    "id": "lotem",
+    "name": "לוטם"
+  },
+  {
+    "id": "maabarot",
+    "name": "מעברות"
+  },
+  {
     "id": "golaein-zivan",
     "name": "עין זיוון"
   },
   {
     "id": "kidmat-zvi",
     "name": "קדמת צבי"
+  },
+  {
+    "id": "ramot-naftali",
+    "name": "רמות נפתלי"
+  },
+  {
+    "id": "zichron-yaakov",
+    "name": "זיכרון יעקב"
   }
 ]

@@ -13,6 +13,32 @@
       }
     },
     {
+      "location": "maabarot",
+      "id": "vitkin",
+      "description": {
+        "name": "ויתקין",
+        "lastUpdate": "28-04-2026",
+        "overview": "מתמחה בזנים ים תיכוניים (כמו קריניאן וסירה). רוב שנותיו לא היה כשר, אם כי בשנים האחרונות חלק מהייצור עבר למסלול כשר – יש לבדוק בקבוק ספציפי",
+        "attributes": [
+          ["NO_APPROVAL", ""],
+          ["OPEN_SATURDAY", "מרכז המבקרים פתוח"]
+        ]
+      }
+    },
+    {
+      "location": "lotem",
+      "id": "lotem",
+      "description": {
+        "name": "לוטם",
+        "lastUpdate": "28-04-2026",
+        "overview": "יקב אורגני בגליל המערבי שמשמיע מוזיקה לחביות היין (כן, ברצינות)",
+        "attributes": [
+          ["NO_APPROVAL", ""],
+          ["OPEN_SATURDAY", ""]
+        ]
+      }
+    },
+    {
       "location": "binyamina",
       "id": "margalit",
       "description": {
@@ -21,6 +47,31 @@
         "overview": "נחשב לאחד מיקבי הבוטיק הראשונים בישראל. היקב מתמקד ביינות אדומים קלאסיים.",
         "attributes": [
           ["NO_APPROVAL", ""]
+        ]
+      }
+    },
+    {
+      "location": "ramot-naftali",
+      "id": "naaman",
+      "description": {
+        "name": "נעמן",
+        "lastUpdate": "28-04-2026",
+        "overview": "יקב בוטיק משפחתי עם נטייה חזקה ליינות בסגנון בורדו",
+        "attributes": [
+          ["NO_APPROVAL", ""]
+        ]
+      }
+    },
+    {
+      "location": "zichron-yaakov",
+      "id": "somek",
+      "description": {
+        "name": "סומק",
+        "lastUpdate": "28-04-2026",
+        "overview": "יקב משפחתי קטן המייצר יינות בשיטות מסורתיות.",
+        "attributes": [
+          ["NO_APPROVAL", ""],
+          ["OPEN_SATURDAY", "טעימת יינות - שישי-שבת בשעה 11:00"]
         ]
       }
     },
