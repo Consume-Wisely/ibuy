@@ -37,19 +37,3 @@ export interface WineryItem {
   id: string;
   description: ItemDescription;
 }
-
-export interface RestaurantItem {
-  location: string;
-  id: string;
-  name: string;
-  lastUpdate: string;
-  images?: Array<string>;
-  singleApproval?: string;
-  noApproval?: string;
-  fullServiceOnSaturday?: string;
-  notQualified?: boolean;
-  openSaturday?: string;
-  Tzohar?: boolean;
-  warningFlag?: string; 
-  detailsImages?: Array<string>;
-}
