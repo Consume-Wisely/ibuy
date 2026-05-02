@@ -45,7 +45,7 @@ export const HomePage = () => {
               onClick={() => {
                 navigate("/salute")
               }}>
-              מפרגנים
+              קהילה תומכת
             </div>
         </div>
     </div>
