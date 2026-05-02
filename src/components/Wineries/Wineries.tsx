@@ -1,4 +1,4 @@
-import { ItemDescription, LocationDescriptor, WineryItem } from "../../model/globalObjects";
+import { ItemDescription, LocationDescriptor, LocationItem } from "../../model/globalObjects";
 import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
 import { WineryItemsCatalogManager } from "../../utils/WineryItemsCatalogManager";
@@ -8,11 +8,11 @@ import "./Wineries.css";
 
 export const Wineries = () => {
   const locations: Array<LocationDescriptor> = LocationsCatalogManager.getLocations();
-  const wineries: Array<WineryItem> = WineryItemsCatalogManager.getWineries();
+  const wineries: Array<LocationItem> = WineryItemsCatalogManager.getWineries();
 
   const wineriesDescriptions: Array<ItemDescription> = 
     WineryItemsCatalogManager.getItemsDescriptions(wineries); 
-  const allWinery: WineryItem = {
+  const allWinery: LocationItem = {
     id: "allWineries",
     description: {
       name: "כל היקבים",
@@ -20,7 +20,6 @@ export const Wineries = () => {
       overview: "",
       attributes: []
     },
-    location: "all",
   };
 
   const noneLocation: LocationDescriptor = {
@@ -29,7 +28,7 @@ export const Wineries = () => {
   };
 
   const displayedLocations: Array<LocationDescriptor> = [noneLocation, ...locations]
-  const displayedWineries: Array<WineryItem> = [allWinery, ...wineries]
+  const displayedWineries: Array<LocationItem> = [allWinery, ...wineries]
   const locationSelectionHandler = (selectedIndex: number) => {
     alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם תוצג רשימה של היקבים ב${displayedLocations[selectedIndex].name}`);
   }
@@ -57,7 +56,7 @@ export const Wineries = () => {
           <select className="app-drop-down app-width-100 app-indent-right-16" id="wineries"
             onChange={ (e) => winerySelectionHandler(e.target.selectedIndex) }>
             {
-              displayedWineries.map((win: WineryItem) => {
+              displayedWineries.map((win: LocationItem) => {
                 return(
                   <option key={ win.id }>{ win.description.name }</option>
                 )
@@ -74,7 +73,7 @@ export const Wineries = () => {
         ] } />
       </div>
       <div className="margin-top-l">
-        <ItemsView items={ wineriesDescriptions } />
+        <ItemsView items={ wineriesDescriptions } isLocation={ true } />
       </div>
 
     </div>

@@ -12,6 +12,10 @@
     "name": "הראל"
   },
   {
+    "id": "tel-shahar",
+    "name": "טל-שחר"
+  },
+  {
     "id": "lotem",
     "name": "לוטם"
   },
@@ -20,7 +24,7 @@
     "name": "מעברות"
   },
   {
-    "id": "golaein-zivan",
+    "id": "ein-zivan",
     "name": "עין זיוון"
   },
   {

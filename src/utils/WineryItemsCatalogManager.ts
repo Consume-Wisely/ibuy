@@ -1,13 +1,13 @@
-import { ItemDescription, WineryItem } from "../model/globalObjects";
+import { ItemDescription, LocationItem } from "../model/globalObjects";
 
 export class WineryItemsCatalogManager {
   static wineries = require("./../assets/catalogs/wineryItemsCatalog.json").items;
   
-  public static getWineries(): Array<WineryItem> {
+  public static getWineries(): Array<LocationItem> {
     return WineryItemsCatalogManager.wineries;
   }
 
-  static getItemsDescriptions(wineryItems: WineryItem[]): Array<ItemDescription> {
+  static getItemsDescriptions(wineryItems: LocationItem[]): Array<ItemDescription> {
     var list: Array<ItemDescription> = [];
     for (var i=0; i < wineryItems.length; i++) {
       var item = wineryItems[i];
@@ -15,6 +15,4 @@ export class WineryItemsCatalogManager {
     }
     return list;
   }
-
-
 }

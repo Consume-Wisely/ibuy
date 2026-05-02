@@ -1,10 +1,10 @@
 {
   "items": [
     {
-      "location": "kidmat-zvi",
       "id": "asaf",
       "description": {
         "name": "אסף",
+        "location": "kidmat-zvi",
         "lastUpdate": "28-04-2026",
         "overview": "יקב משפחתי ברמת הגולן הכולל גם \"קדם\" (כפר יין) עם אירוח ולינה.",
         "attributes": [
@@ -13,10 +13,10 @@
       }
     },
     {
-      "location": "maabarot",
       "id": "vitkin",
       "description": {
         "name": "ויתקין",
+        "location": "maabarot",
         "lastUpdate": "28-04-2026",
         "overview": "מתמחה בזנים ים תיכוניים (כמו קריניאן וסירה). רוב שנותיו לא היה כשר, אם כי בשנים האחרונות חלק מהייצור עבר למסלול כשר – יש לבדוק בקבוק ספציפי",
         "attributes": [
@@ -26,10 +26,10 @@
       }
     },
     {
-      "location": "lotem",
       "id": "lotem",
       "description": {
         "name": "לוטם",
+        "location": "lotem",
         "lastUpdate": "28-04-2026",
         "overview": "יקב אורגני בגליל המערבי שמשמיע מוזיקה לחביות היין (כן, ברצינות)",
         "attributes": [
@@ -39,10 +39,10 @@
       }
     },
     {
-      "location": "binyamina",
       "id": "margalit",
       "description": {
         "name": "מרגלית",
+        "location": "binyamina",
         "lastUpdate": "28-04-2026",
         "overview": "נחשב לאחד מיקבי הבוטיק הראשונים בישראל. היקב מתמקד ביינות אדומים קלאסיים.",
         "attributes": [
@@ -51,10 +51,10 @@
       }
     },
     {
-      "location": "ramot-naftali",
       "id": "naaman",
       "description": {
         "name": "נעמן",
+        "location": "ramot-naftali",
         "lastUpdate": "28-04-2026",
         "overview": "יקב בוטיק משפחתי עם נטייה חזקה ליינות בסגנון בורדו",
         "attributes": [
@@ -63,10 +63,10 @@
       }
     },
     {
-      "location": "zichron-yaakov",
       "id": "somek",
       "description": {
         "name": "סומק",
+        "location": "zichron-yaakov",
         "lastUpdate": "28-04-2026",
         "overview": "יקב משפחתי קטן המייצר יינות בשיטות מסורתיות.",
         "attributes": [
@@ -76,10 +76,10 @@
       }
     },
     {
-      "location": "bar-giora",
       "id": "suson-yam",
       "description": {
         "name": "סוסון ים",
+        "location": "bar-giora",
         "lastUpdate": "28-04-2026",
         "overview": "יקב ייחודי עם יינות בעלי שמות מעולם התרבות והקולנוע.",
         "attributes": [
@@ -88,10 +88,10 @@
       }
     },
     {
-      "location": "ein-zivan",
       "id": "pelter",
       "description": {
         "name": "פלטר",
+        "location": "ein-zivan",
         "lastUpdate": "28-04-2026",
         "overview": "אחד היקבים המוכרים ביותר. חשוב לשים לב: למשפחת פלטר יש גם יקב \"אח\" בשם מתתיה, שהוא כן כשר, אך מותג \"פלטר\" עצמו אינו כשר.",
         "attributes": [
@@ -101,10 +101,10 @@
       }
     },
     {
-      "location": "harel",
       "id": "klu-de-gat",
       "description": {
         "name": "קלו דה גת",
+        "location": "harel",
         "lastUpdate": "28-04-2026",
         "overview": "יקב הממוקם למרגלות הרי יהודה. מייצר בשיטות מסורתיות",
         "attributes": [
@@ -113,10 +113,10 @@
       }
     },
     {
-      "location": "tel-shahar",
       "id": "sorek",
       "description": {
         "name": "שורק",
+        "location": "tel-shahar",
         "lastUpdate": "28-04-2026",
         "overview": "מעבר להיותו יקב, משמש כבית ספר לעשיית יין.",
         "attributes": [

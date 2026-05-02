@@ -1,10 +1,12 @@
 import { ItemDescription } from "../../../model/globalObjects"
 import { ITEM_ATTRIBUTES } from "../../../utils/constants";
+import { LocationsCatalogManager } from "../../../utils/LocationsCatalogManager";
 import { ModelVisualUtils } from "../../../utils/ModelVisualUtils";
 import "./ItemsView.css";
 
 export interface ItemsViewProps {
   items: Array<ItemDescription>;
+  isLocation?: boolean;
   onSelect: Function;
 }
 
@@ -29,6 +31,11 @@ export const ItemsList = (props: ItemsViewProps) => {
                   <th>
                     שם
                   </th>
+                  { props.isLocation !== undefined && props.isLocation === true &&
+                    <th>
+                      מקום
+                    </th>
+                  }
                   <th>
                     
                   </th>
@@ -52,6 +59,11 @@ export const ItemsList = (props: ItemsViewProps) => {
                           <td>
                             { item.name }
                           </td>
+                          { props.isLocation !== undefined && props.isLocation === true &&
+                            <td>
+                              { LocationsCatalogManager.getLocationName(item.location) }
+                            </td>
+                          }
                           <td>
                             <div className="app-center">
                             {

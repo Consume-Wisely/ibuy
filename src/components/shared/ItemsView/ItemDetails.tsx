@@ -1,4 +1,5 @@
 import { ItemDescription } from "../../../model/globalObjects"
+import { LocationsCatalogManager } from "../../../utils/LocationsCatalogManager";
 import { ModelVisualUtils } from "../../../utils/ModelVisualUtils";
 import "./ItemsView.css";
 
@@ -21,6 +22,11 @@ export const ItemDetails = (props: ItemsViewProps) => {
               { props.item.overview !== undefined && props.item.overview.length > 0 &&
                 <div className="items-view-item-overview">
                   { props.item.overview }
+                </div>
+              }
+              { props.item.location !== undefined && props.item.location.length > 0 &&
+                <div className="items-view-item-overview">
+                  { LocationsCatalogManager.getLocationName(props.item.location) }
                 </div>
               }
               {

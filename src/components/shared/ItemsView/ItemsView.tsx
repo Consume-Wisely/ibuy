@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ItemDescription } from "../../../model/globalObjects"
 import { ItemDetails } from "./ItemDetails";
 import { ItemsList } from "./ItemsList";
@@ -6,6 +6,7 @@ import "./ItemsView.css";
 
 export interface ItemsViewProps {
   items: Array<ItemDescription>;
+  isLocation?: boolean;
 }
 
 export const ItemsView = (props: ItemsViewProps) => {
@@ -25,7 +26,12 @@ export const ItemsView = (props: ItemsViewProps) => {
   return(
     <div>
       <div>
-        <ItemsList items={props.items} onSelect={ (item: ItemDescription) => selectionHandler(item) } />
+        <ItemsList items={props.items} 
+          isLocation={ props.isLocation }
+          onSelect={ 
+            (item: ItemDescription) => selectionHandler(item) 
+          }
+        />
       </div>
       <div className={ `items-list-details ${showDetails}` } >
         {

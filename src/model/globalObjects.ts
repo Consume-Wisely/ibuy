@@ -3,6 +3,7 @@ import { ITEM_ATTRIBUTES } from "../utils/constants";
 export interface ItemDescription {
   name: string;
   overview: string;
+  location?: string;
   attributes: Array<[ITEM_ATTRIBUTES, string]>;
   lastUpdate: string;
   images?: Array<string>;
@@ -32,8 +33,7 @@ export interface LocationDescriptor {
   name: string
 }
 
-export interface WineryItem {
-  location: string;
+export interface LocationItem {
   id: string;
   description: ItemDescription;
 }
