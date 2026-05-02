@@ -39,7 +39,7 @@
 
 .items-list-details {
   position: absolute;
-  top: 110px;
+  top: 0px;
   right: 10px;
   background-color: var(--light-blue-00); 
   padding: 10px; 
