@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ItemDescription, LocationDescriptor, LocationItem } from "../../model/globalObjects";
 import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
@@ -10,8 +11,8 @@ export const Wineries = () => {
   const locations: Array<LocationDescriptor> = LocationsCatalogManager.getLocations();
   const wineries: Array<LocationItem> = WineryItemsCatalogManager.getWineries();
 
-  const wineriesDescriptions: Array<ItemDescription> = 
-    WineryItemsCatalogManager.getItemsDescriptions(wineries); 
+  const [wineriesDescriptions, setWineriesDescriptions] =
+    useState<Array<ItemDescription>>(WineryItemsCatalogManager.getItemsDescriptions(wineries)); 
   const allWinery: LocationItem = {
     id: "allWineries",
     description: {
@@ -29,8 +30,14 @@ export const Wineries = () => {
 
   const displayedLocations: Array<LocationDescriptor> = [noneLocation, ...locations]
   const displayedWineries: Array<LocationItem> = [allWinery, ...wineries]
+
   const locationSelectionHandler = (selectedIndex: number) => {
-    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם תוצג רשימה של היקבים ב${displayedLocations[selectedIndex].name}`);
+    if (selectedIndex === 0) {
+      setWineriesDescriptions(WineryItemsCatalogManager.getItemsDescriptions(wineries));
+    }
+    else {
+      setWineriesDescriptions(WineryItemsCatalogManager.getItemsDescriptionsByLocation(displayedLocations[selectedIndex].id));
+    }
   }
 
   const winerySelectionHandler = (selectedIndex: number) => {
