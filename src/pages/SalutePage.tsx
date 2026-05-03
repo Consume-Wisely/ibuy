@@ -1,13 +1,16 @@
+import { ItemsView } from "../components/shared/ItemsView/ItemsView"
 import { TopBanner } from "../components/shared/TopBanner/TopBanner"
+import { ItemDescription } from "../model/globalObjects";
+import { ModelUtils } from "../utils/ModelUtils";
 
 export const SalutePage = () => {
+  const locations = require("./../assets/catalogs/saluteItemsCatalog.json");
+  const locationDescriptions: Array<ItemDescription> = ModelUtils.getItemsDescriptions(locations.items)
+
   return (
     <div className="app-page">
       <TopBanner /><hr/>
-      בהמשך יוצג פה מידע על:
-      <div>עסקים שנפגעו מסיבות דת למשל כי הם פתוחים בשבת</div>
-      <div>עסקים שתומכים בבעלי מוגבלויות למשל מעסיקים אותם</div>
-      <div>עסקים נוספים שתורמים לתיקון עולם</div>
+      <ItemsView items={ locationDescriptions } isLocation={ true } showOverview={ true } />
     </div>
   )
 }

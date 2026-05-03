@@ -7,6 +7,7 @@ import "./ItemsView.css";
 export interface ItemsViewProps {
   items: Array<ItemDescription>;
   isLocation?: boolean;
+  showOverview?: boolean;
   onSelect: Function;
 }
 
@@ -76,6 +77,10 @@ export const ItemsList = (props: ItemsViewProps) => {
                             </div>
                           </td>
                           <td>
+                            { props.showOverview !== undefined && 
+                              props.showOverview === true && item.overview.length > 0 &&
+                              <span>{ item.overview }<br/></span>                      
+                            }
                             {
                               item.attributes.length > 0 &&
                               item.attributes.map(([title, attr]: [ITEM_ATTRIBUTES, string]) => {

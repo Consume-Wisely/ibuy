@@ -7,6 +7,7 @@ import "./ItemsView.css";
 export interface ItemsViewProps {
   items: Array<ItemDescription>;
   isLocation?: boolean;
+  showOverview?: boolean;
 }
 
 export const ItemsView = (props: ItemsViewProps) => {
@@ -28,6 +29,7 @@ export const ItemsView = (props: ItemsViewProps) => {
       <div>
         <ItemsList items={props.items} 
           isLocation={ props.isLocation }
+          showOverview = {props.showOverview }
           onSelect={ 
             (item: ItemDescription) => selectionHandler(item) 
           }

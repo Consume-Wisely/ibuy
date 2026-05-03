@@ -31,6 +31,10 @@ export class ModelVisualUtils {
       return ("resources/icons/no-approval.png");
     }
 
+    if (attr === ITEM_ATTRIBUTES.NOT_QUALIFIED) {
+      return ("resources/icons/not-qualified.png");
+    }
+
     if (attr === ITEM_ATTRIBUTES.OPEN_SATURDAY) {
       return ("resources/icons/open-saturday.png");
     }

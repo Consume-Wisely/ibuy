@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ItemDescription, LocationDescriptor, LocationItem } from "../../model/globalObjects";
 import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
+import { ModelUtils } from "../../utils/ModelUtils";
 import { WineryItemsCatalogManager } from "../../utils/WineryItemsCatalogManager";
 import { FilterBar } from "../shared/FilterBar/FilterBar";
 import { ItemsView } from "../shared/ItemsView/ItemsView";
@@ -12,7 +13,7 @@ export const Wineries = () => {
   const wineries: Array<LocationItem> = WineryItemsCatalogManager.getWineries();
 
   const [wineriesDescriptions, setWineriesDescriptions] =
-    useState<Array<ItemDescription>>(WineryItemsCatalogManager.getItemsDescriptions(wineries)); 
+    useState<Array<ItemDescription>>(ModelUtils.getItemsDescriptions(wineries)); 
   const allWinery: LocationItem = {
     id: "allWineries",
     description: {
@@ -33,10 +34,10 @@ export const Wineries = () => {
 
   const locationSelectionHandler = (selectedIndex: number) => {
     if (selectedIndex === 0) {
-      setWineriesDescriptions(WineryItemsCatalogManager.getItemsDescriptions(wineries));
+      setWineriesDescriptions(ModelUtils.getItemsDescriptions(wineries));
     }
     else {
-      setWineriesDescriptions(WineryItemsCatalogManager.getItemsDescriptionsByLocation(displayedLocations[selectedIndex].id));
+      setWineriesDescriptions(ModelUtils.getItemsDescriptionsByLocation(wineries, displayedLocations[selectedIndex].id));
     }
   }
 
