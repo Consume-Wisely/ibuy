@@ -59,3 +59,8 @@
 .item-details-area {
   text-align: right;
 }
+
+.item-list-overview {
+   font-size: var(--font-size-normal);
+   margin-bottom: 5px;
+}

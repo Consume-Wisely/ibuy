@@ -79,7 +79,7 @@ export const ItemsList = (props: ItemsViewProps) => {
                           <td>
                             { props.showOverview !== undefined && 
                               props.showOverview === true && item.overview.length > 0 &&
-                              <span>{ item.overview }<br/></span>                      
+                              <div className="item-list-overview">{ item.overview }<br/></div>                      
                             }
                             {
                               item.attributes.length > 0 &&
