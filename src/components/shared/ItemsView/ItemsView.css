@@ -40,12 +40,15 @@
 .items-list-details {
   position: absolute;
   min-height: 200px;
-  min-width: 400px;
   top: 0px;
   right: 10px;
   background-color: var(--light-blue-00); 
   padding: 10px; 
   border: solid 1px var(--blue-03)
+}
+
+.items-list-details-wide {
+  min-width: 400px;
 }
 
 .items-list-details-popup-hide {

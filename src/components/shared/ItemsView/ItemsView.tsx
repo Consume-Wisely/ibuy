@@ -35,7 +35,7 @@ export const ItemsView = (props: ItemsViewProps) => {
           }
         />
       </div>
-      <div className={ `items-list-details ${showDetails}` } >
+      <div className={ `items-list-details ${window.innerWidth > 400 ? "items-list-details-wide" : ""} ${showDetails}` } >
         {
           shownItemDetails !== undefined && 
           <ItemDetails item={shownItemDetails!} closeHandler={ popupCloseHandler } />
