@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Select from "react-select/dist/declarations/src/Select";
 import { ItemDescription, LocationDescriptor, LocationItem } from "../../model/globalObjects";
 import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
@@ -49,14 +48,6 @@ export const FoodServices = (props: FoodServicesProps) => {
   const providerSelectionHandler = (selectedIndex: number) => {
     alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].description.name}`);
   }
-
-  const locationOptions = [
-    displayedLocations.map((loc: LocationDescriptor) => {
-      return(
-        {value: loc.id, label: loc.name }
-      )
-    })
-  ];
 
   return (
     <div className="wineries-area">
