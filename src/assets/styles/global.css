@@ -104,6 +104,7 @@ a {
   padding: 4px;
   background-color: var(--link);
   color: white;
+  overflow-y: auto;
 }
 
 .app-indent-right-08 {

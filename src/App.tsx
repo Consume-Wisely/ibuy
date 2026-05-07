@@ -5,8 +5,9 @@ import { GroceriesPage } from './pages/GroceriesPage';
 import { HomePage } from './pages/HomePage';
 import { OrganizationsPage } from './pages/OrganizationsPage';
 import { SalutePage } from './pages/SalutePage';
-import { ServicesPage } from './pages/ServicesPage';
+import { LodgingServicesPage } from './pages/LodgingServicesPage';
 import { WineriesPage } from './pages/WineriesPage';
+import { FoodServicesPage } from './pages/FoodServicesPage';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/groceries" element={<GroceriesPage />} />
           <Route path="/wineries" element={<WineriesPage />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/food-services" element={<FoodServicesPage />} />
+          <Route path="/lodging-services" element={<LodgingServicesPage />} />
           <Route path="/organizations" element={<OrganizationsPage />} />
           <Route path="/salute" element={<SalutePage />} />
         </Routes>

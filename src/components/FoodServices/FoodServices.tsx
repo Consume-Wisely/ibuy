@@ -1,23 +1,28 @@
 import { useState } from "react";
+import Select from "react-select/dist/declarations/src/Select";
 import { ItemDescription, LocationDescriptor, LocationItem } from "../../model/globalObjects";
 import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { LocationsCatalogManager } from "../../utils/LocationsCatalogManager";
 import { ModelUtils } from "../../utils/ModelUtils";
-import { WineryItemsCatalogManager } from "../../utils/WineryItemsCatalogManager";
 import { FilterBar } from "../shared/FilterBar/FilterBar";
 import { ItemsView } from "../shared/ItemsView/ItemsView";
-import "./Wineries.css";
+import "./FoodServices.css";
 
-export const Wineries = () => {
+export interface FoodServicesProps {
+  repositoryName: string;
+  title: string;
+}
+
+export const FoodServices = (props: FoodServicesProps) => {
   const locations: Array<LocationDescriptor> = LocationsCatalogManager.getLocations();
-  const wineries: Array<LocationItem> = WineryItemsCatalogManager.getWineries();
-
-  const [wineriesDescriptions, setWineriesDescriptions] =
-    useState<Array<ItemDescription>>(ModelUtils.getItemsDescriptions(wineries)); 
+  const providers: Array<LocationItem> = (require(`./../../assets/catalogs/${props.repositoryName}`)).items;
+  
+  const [providersDescriptions, setProvidersDescriptions] =
+    useState<Array<ItemDescription>>(ModelUtils.getItemsDescriptions(providers)); 
   const allWinery: LocationItem = {
-    id: "allWineries",
+    id: "allLocations",
     description: {
-      name: "כל היקבים",
+      name: "כולם",
       lastUpdate: "",
       overview: "",
       attributes: []
@@ -30,24 +35,32 @@ export const Wineries = () => {
   };
 
   const displayedLocations: Array<LocationDescriptor> = [noneLocation, ...locations]
-  const displayedWineries: Array<LocationItem> = [allWinery, ...wineries]
+  const displayedWineries: Array<LocationItem> = [allWinery, ...providers]
 
   const locationSelectionHandler = (selectedIndex: number) => {
     if (selectedIndex === 0) {
-      setWineriesDescriptions(ModelUtils.getItemsDescriptions(wineries));
+      setProvidersDescriptions(ModelUtils.getItemsDescriptions(providers));
     }
     else {
-      setWineriesDescriptions(ModelUtils.getItemsDescriptionsByLocation(wineries, displayedLocations[selectedIndex].id));
+      setProvidersDescriptions(ModelUtils.getItemsDescriptionsByLocation(providers, displayedLocations[selectedIndex].id));
     }
   }
 
-  const winerySelectionHandler = (selectedIndex: number) => {
+  const providerSelectionHandler = (selectedIndex: number) => {
     alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].description.name}`);
   }
 
+  const locationOptions = [
+    displayedLocations.map((loc: LocationDescriptor) => {
+      return(
+        {value: loc.id, label: loc.name }
+      )
+    })
+  ];
+
   return (
     <div className="wineries-area">
-      <div className="app-header-l ibuy-page-header">יקבים</div>
+      <div className="app-header-l ibuy-page-header">{ props.title }</div>
       <div className="wineries-filter-area">
         <div className="wineries-filter-area-right">
           <select className="app-drop-down app-width-100" id="categories"
@@ -60,10 +73,11 @@ export const Wineries = () => {
               })
             }
           </select>
+
         </div>
         <div className="wineries-filter-area-left app-clickable">
           <select className="app-drop-down app-width-100 app-indent-right-16" id="wineries"
-            onChange={ (e) => winerySelectionHandler(e.target.selectedIndex) }>
+            onChange={ (e) => providerSelectionHandler(e.target.selectedIndex) }>
             {
               displayedWineries.map((win: LocationItem) => {
                 return(
@@ -82,7 +96,7 @@ export const Wineries = () => {
         ] } />
       </div>
       <div className="margin-top-l">
-        <ItemsView items={ wineriesDescriptions } isLocation={ true } />
+        <ItemsView items={ providersDescriptions } isLocation={ true } />
       </div>
 
     </div>

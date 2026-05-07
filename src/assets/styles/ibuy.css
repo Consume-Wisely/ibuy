@@ -1,0 +1,9 @@
+@import url("./global.css");
+
+.ibuy-page-header {
+  width: 100%;
+  text-align: center;
+  color: var(--blue-02);
+  margin-top: 0px;
+  margin-bottom: var(--size-normal);
+}

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { GroceryCategory, GroceryCategoryDedscriptor, GroceryItem, ItemDescription } from "../../model/globalObjects";
-import { ITEM_ATTRIBUTES } from "../../utils/constants";
 import { GroceryCategoriesCatalogManager } from "../../utils/GroceryCategoriesCatalogManager";
 import { GroceryItemsCatalogManager } from "../../utils/GroceryItemsCatalogManager";
-import { FilterBar } from "./../shared/FilterBar/FilterBar";
 import "./Groceries.css";
 import { ItemsView } from "../shared/ItemsView/ItemsView";
 
@@ -51,6 +49,7 @@ export const Groceries = () => {
   
   return (
     <div className="groceries-area">
+      <div className="app-header-l ibuy-page-header">מוצרי צריכה עם הכשר יחיד</div>
       <div className="groceries-filter-area">
         <div className="groceries-filter-area-right">
           <select className="app-drop-down app-width-100" id="categories"
@@ -86,13 +85,6 @@ export const Groceries = () => {
           onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד עם רשימת המוצרים")}>
           רשימת מוצרים
         </div>
-      </div>
-      <div className="margin-top-normal">
-        <FilterBar entries={ [
-          ITEM_ATTRIBUTES.SINGLE_APPROVAL,
-          ITEM_ATTRIBUTES.NO_APPROVAL,
-          ITEM_ATTRIBUTES.NOT_QUALIFIED
-        ] } />
       </div>
       <div className="margin-top-normal">
         <ItemsView items={ itemsDescriptions } />

@@ -28,11 +28,18 @@ export const TopMenu = (props: TopMenuProps) => {
               יקבים
             </div>
             <div 
-              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.SERVICES ? "top-menu-item-selected" : ""}`}
+              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.FOOD_SERVICES ? "top-menu-item-selected" : ""}`}
               onClick={() => {
-                navigate("/services")
+                navigate("/food-services")
               }}>
-              נופש והסעדה
+              הסעדה
+            </div>
+            <div 
+              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.LODGING_SERVICES ? "top-menu-item-selected" : ""}`}
+              onClick={() => {
+                navigate("/lodging-services")
+              }}>
+              נופש
             </div>
         </div>
       <hr className="top-menu-separator"/>

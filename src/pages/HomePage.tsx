@@ -13,6 +13,13 @@ export const HomePage = () => {
       </div>
           <div className="home-page-menu">
             <div 
+              className={ "home-page-menu-item-salute app-clickable app-link" }
+              onClick={() => {
+                navigate("/salute")
+              }}>
+              קהילה תומכת
+            </div>
+            <div 
               className={ "home-page-menu-item app-clickable app-link" }
               onClick={() => {
                 navigate("/groceries")
@@ -29,9 +36,16 @@ export const HomePage = () => {
             <div 
               className={ "home-page-menu-item app-clickable app-link" }
               onClick={() => {
-                navigate("/services")
+                navigate("/food-services")
               }}>
-              נופש והסעדה
+              הסעדה
+            </div>
+            <div 
+              className={ "home-page-menu-item app-clickable app-link" }
+              onClick={() => {
+                navigate("/lodging-services")
+              }}>
+              נופש
             </div>
             <div 
               className={ "home-page-menu-item app-clickable app-link" }
@@ -39,13 +53,6 @@ export const HomePage = () => {
                 navigate("/organizations")
               }}>
               מוצרים לארגונים
-            </div>
-            <div 
-              className={ "home-page-menu-item-salute app-clickable app-link" }
-              onClick={() => {
-                navigate("/salute")
-              }}>
-              קהילה תומכת
             </div>
         </div>
     </div>

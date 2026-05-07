@@ -12,6 +12,10 @@
     "name": "הראל"
   },
   {
+    "id": "zichron-yaakov",
+    "name": "זיכרון יעקב"
+  },
+  {
     "id": "haifa",
     "name": "חיפה"
   },
@@ -40,7 +44,7 @@
     "name": "רמות נפתלי"
   },
   {
-    "id": "zichron-yaakov",
-    "name": "זיכרון יעקב"
+    "id": "ramat-gan",
+    "name": "רמת גן"
   }
 ]

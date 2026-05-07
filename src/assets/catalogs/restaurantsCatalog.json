@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": "zanzara",
+      "description": {
+        "name": "זנזרה",
+        "location": "haifa",
+        "lastUpdate": "05-04-2026",
+        "overview": " חלונות המסעדה נופצו ע\"י אבנים שהושלכו בגלל שהמסעדה פתוחה בשבת.\n לעוד מידע: https://www.maariv.co.il/news/law/article-1305446",
+        "attributes": [
+          ["NOT_QUALIFIED", ""],
+          ["OPEN_SATURDAY", ""]
+        ]
+      }
+    }
+  ]
+}
