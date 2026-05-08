@@ -50,10 +50,10 @@ export const FoodServices = (props: FoodServicesProps) => {
   }
 
   return (
-    <div className="wineries-area">
+    <div className="food-services-area">
       <div className="app-header-l ibuy-page-header">{ props.title }</div>
-      <div className="wineries-filter-area">
-        <div className="wineries-filter-area-right">
+      <div className="ibuy-filter-area">
+        <div className="ibuy-filter-area-right">
           <select className="app-drop-down app-width-100" id="categories"
             onChange={ (e) => locationSelectionHandler(e.target.selectedIndex) }>
             {
@@ -66,7 +66,7 @@ export const FoodServices = (props: FoodServicesProps) => {
           </select>
 
         </div>
-        <div className="wineries-filter-area-left app-clickable">
+        <div className="ibuy-filter-area-left app-clickable">
           <select className="app-drop-down app-width-100 app-indent-right-16" id="wineries"
             onChange={ (e) => providerSelectionHandler(e.target.selectedIndex) }>
             {
@@ -77,6 +77,10 @@ export const FoodServices = (props: FoodServicesProps) => {
               })
             }
           </select>
+        </div>
+        <div className="ibuy-filter-area-left app-clickable"
+          onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד שמציג מפה של מקומות ההסעדה הנבחרים")}>
+          מפה
         </div>
       </div>
       <div className="margin-top-l">

@@ -7,3 +7,23 @@
   margin-top: 0px;
   margin-bottom: var(--size-normal);
 }
+
+.ibuy-filter-area {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.ibuy-filter-area-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.ibuy-filter-area-left {
+  display: flex;
+  font-size: var(--font-size-normal);
+  font-weight: bold; 
+  color: var(--link);
+  margin-right: var(--size-normal);
+}

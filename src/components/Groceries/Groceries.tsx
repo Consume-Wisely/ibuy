@@ -50,8 +50,8 @@ export const Groceries = () => {
   return (
     <div className="groceries-area">
       <div className="app-header-l ibuy-page-header">מוצרי צריכה עם הכשר יחיד</div>
-      <div className="groceries-filter-area">
-        <div className="groceries-filter-area-right">
+      <div className="ibuy-filter-area">
+        <div className="ibuy-filter-area-right">
           <select className="app-drop-down app-width-100" id="categories"
             onChange={ (e) => categotySelectionHandler(e.target.selectedIndex) }>
             {
@@ -81,7 +81,7 @@ export const Groceries = () => {
             </div>
           }
         </div>
-        <div className="groceries-filter-area-left app-clickable"
+        <div className="ibuy-filter-area-left app-clickable"
           onClick={() => alert("אופציה זאת עדיין לא פעילה.\n כשהיא תושלם, ייפתח עמוד עם רשימת המוצרים")}>
           רשימת מוצרים
         </div>

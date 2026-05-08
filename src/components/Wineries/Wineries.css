@@ -7,22 +7,6 @@
   flex-direction: column;
 }
 
-.wineries-filter-area {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.wineries-filter-area-right {
-  display: flex;
-  flex-direction: row;
-}
-
-.wineries-filter-area-left {
-  display: flex;
-  color: var(--link);
-}
-
 .wineries-titles {
   font-size: var(--font-size-normal);
   font-weight: bold; 

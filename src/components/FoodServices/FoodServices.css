@@ -1,0 +1,10 @@
+@import "./../../assets/styles/ibuy.css";
+
+.food-services-area {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--size-xs);
+  margin-right: var(--global-margin);
+  margin-left: var(--global-margin);
+  flex-direction: column;
+}
