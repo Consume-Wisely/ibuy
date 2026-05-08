@@ -86,7 +86,7 @@ export const ItemsList = (props: ItemsViewProps) => {
                               item.attributes.map(([title, attr]: [ITEM_ATTRIBUTES, string]) => {
                                 return (
                                   <span key={ `items-view-${title}` }>
-                                    { attr.length === 0 &&
+                                    { 
                                       <span className="app-bold margin-right-s">
                                         { ModelVisualUtils.getAttributeTitle(title) }
                                       </span>
