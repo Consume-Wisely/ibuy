@@ -1,4 +1,4 @@
-@import "./../../../assets/styles/global.css";
+@import "./../../../assets/styles/ibuy.css";
 
 .top-banner {
   display: flex;
@@ -14,3 +14,13 @@
   font-weight: bold;
   color: #504031;
 }
+
+.top-banner-separator {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #504031;
+  margin: 0 4px 0 0;
+  padding: 0;
+}
+

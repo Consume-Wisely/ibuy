@@ -49,7 +49,7 @@ export const Groceries = () => {
   
   return (
     <div className="groceries-area">
-      <div className="app-header-l ibuy-page-header">מוצרי צריכה עם הכשר יחיד</div>
+      <div className="app-header-l ibuy-page-header">מוצרי מזון עם הכשר יחיד</div>
       <div className="ibuy-filter-area">
         <div className="ibuy-filter-area-right">
           <select className="app-drop-down app-width-100" id="categories"

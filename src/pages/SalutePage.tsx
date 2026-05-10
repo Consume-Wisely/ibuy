@@ -9,7 +9,7 @@ export const SalutePage = () => {
 
   return (
     <div className="app-page">
-      <TopBanner /><hr/>
+      <TopBanner />
       <ItemsView items={ locationDescriptions } isLocation={ true } showOverview={ true } />
     </div>
   )

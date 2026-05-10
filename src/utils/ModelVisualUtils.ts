@@ -1,4 +1,4 @@
-import { ITEM_ATTRIBUTES } from "./constants";
+import { ENTRIES, ITEM_ATTRIBUTES } from "./constants";
 
 export class ModelVisualUtils {
 
@@ -51,6 +51,81 @@ export class ModelVisualUtils {
       }
     }
     return list;
+  }
+
+  public static getTopMenuEntryTitle(entryCode: ENTRIES): string {
+    switch(entryCode) {
+      case ENTRIES.COFFEE_SHOPS: {
+        return "בתי קפה";
+      }
+      case ENTRIES.GROCERIES: {
+        return "מוצרי מזון";
+      }
+      case ENTRIES.HOTELS: {
+        return "מלונות";
+      }
+      case ENTRIES.ICECREAM_SHOPS: {
+        return "גלידריות";
+      }
+      case ENTRIES.PUBS: {
+        return "פאבים";
+      }
+      case ENTRIES.RESTAURANTS: {
+        return "מסעדות";
+      }
+      case ENTRIES.WINERIES: {
+        return "יקבים";
+      }
+      case ENTRIES.WINERIES_SINGLE_APPROVAL: {
+        return "יקבים";
+      }
+      case ENTRIES.ZIMERS: {
+        return "צימרים";
+      }
+      case ENTRIES.PRESENT_PACKAGES: {
+        return "חבילות שי ";
+      }
+      case ENTRIES.WINE_PACKAGES: {
+        return "מארזי יינות";
+      }
+      default: return "";
+    }
+  }
+
+  public static getTopMenuEntryTarget(entryCode: ENTRIES): string {
+    switch(entryCode) {
+      case ENTRIES.COFFEE_SHOPS: {
+        return "";
+      }
+      case ENTRIES.GROCERIES: {
+        return "/single-approval";
+      }
+      case ENTRIES.HOTELS: {
+        return "";
+      }
+      case ENTRIES.ICECREAM_SHOPS: {
+        return "גלידריות";
+      }
+      case ENTRIES.PUBS: {
+        return "פאבים";
+      }
+      case ENTRIES.RESTAURANTS: {
+        return "מסעדות";
+      }
+      case ENTRIES.WINERIES: {
+        return "/wineries";
+      }
+      case ENTRIES.ZIMERS: {
+        return "צימרים";
+      }
+      case ENTRIES.PRESENT_PACKAGES: {
+        return "חבילות שי ";
+      }
+      case ENTRIES.WINE_PACKAGES: {
+        return "מארזי יינות";
+      }
+      default: return "";
+    }
   }
 
 }

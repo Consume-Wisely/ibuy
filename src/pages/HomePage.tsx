@@ -22,9 +22,9 @@ export const HomePage = () => {
             <div 
               className={ "home-page-menu-item app-clickable app-link" }
               onClick={() => {
-                navigate("/groceries")
+                navigate("/single-approval")
               }}>
-              מוצרי צריכה
+              מוצרי מזון עם הכשר יחיד
             </div>
             <div 
               className={ "home-page-menu-item app-clickable app-link" }
@@ -36,16 +36,9 @@ export const HomePage = () => {
             <div 
               className={ "home-page-menu-item app-clickable app-link" }
               onClick={() => {
-                navigate("/food-services")
+                navigate("/open-saturday")
               }}>
-              הסעדה
-            </div>
-            <div 
-              className={ "home-page-menu-item app-clickable app-link" }
-              onClick={() => {
-                navigate("/lodging-services")
-              }}>
-              נופש
+              מקומות הסעדה פתוחים בשבת
             </div>
             <div 
               className={ "home-page-menu-item app-clickable app-link" }

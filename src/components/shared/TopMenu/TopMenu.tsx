@@ -1,47 +1,39 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { ENTRIES } from "../../../utils/constants";
+import { ModelVisualUtils } from "../../../utils/ModelVisualUtils";
 import "./TopMenu.css";
 
 export interface TopMenuProps {
-  seletedEntry?: string;
+  entries: Array<ENTRIES>;
+  onSelect: Function;
+  seletedEntry?: ENTRIES;
 } 
 
 export const TopMenu = (props: TopMenuProps) => {
-  const navigate = useNavigate();
+  const [selectedEntry, setSelectedEntry] = useState<ENTRIES>(
+    props.seletedEntry !== undefined ? props.seletedEntry : props.entries[0]
+  );
 
   return (
     <div>
-      <hr className="top-menu-separator"/>
-        <div className="top-menu">
-            <div 
-              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.GROCERIES ? "top-menu-item-selected" : ""}`}
-              onClick={() => {
-                navigate("/groceries")
-              }}>
-              מוצרי צריכה
-            </div>
-            <div 
-              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.WINERIES ? "top-menu-item-selected" : ""}`}
-              onClick={() => {
-                navigate("/wineries")
-              }}>
-              יקבים
-            </div>
-            <div 
-              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.FOOD_SERVICES ? "top-menu-item-selected" : ""}`}
-              onClick={() => {
-                navigate("/food-services")
-              }}>
-              הסעדה
-            </div>
-            <div 
-              className={`top-menu-item app-clickable app-link ${props.seletedEntry !== undefined && props.seletedEntry === ENTRIES.LODGING_SERVICES ? "top-menu-item-selected" : ""}`}
-              onClick={() => {
-                navigate("/lodging-services")
-              }}>
-              נופש
-            </div>
-        </div>
+      <div className="top-menu">
+      { props.entries.map((entry: ENTRIES) => {
+        const title = ModelVisualUtils.getTopMenuEntryTitle(entry);
+        return(
+          <div
+            key={ entry.toString() } 
+            className={`top-menu-item app-clickable app-link ${entry !== undefined && selectedEntry === entry ? "top-menu-item-selected" : ""}`}
+            onClick={() => {
+              if (selectedEntry !== entry) {
+                setSelectedEntry(entry);
+              }
+              props.onSelect(entry)
+            }}>
+            { title }
+          </div>
+        )})
+      }
+      </div>
       <hr className="top-menu-separator"/>
     </div>
   )
