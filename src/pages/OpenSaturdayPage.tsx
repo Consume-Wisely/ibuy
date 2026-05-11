@@ -31,13 +31,13 @@ export const OpenSaturdayPage = () => {
         </div>
       }
       { selectedContent === ENTRIES.PUBS &&
-        <div className="app-indent-top-32">
-          בהמשך יוצג כאן מידע על פאבים פתוחים בשבת
+        <div>
+          <FoodServices repositoryName="pubsCatalog.json" title="פאבים" />
         </div>
       }
       { selectedContent === ENTRIES.ICECREAM_SHOPS &&
-        <div className="app-indent-top-32">
-          בהמשך יוצג כאן מידע על גלידריות פתוחות בשבת
+        <div>
+          <FoodServices repositoryName="icecreamShopsCatalog.json" title="גלידריות" />
         </div>
       }
     </div>

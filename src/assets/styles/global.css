@@ -323,6 +323,10 @@ a {
   margin-top: var(--size-normal);
 }
 
+.margin-top-s {
+  margin-top: var(--size-s);
+}
+
 .margin-left-l {
   margin-left: var(--size-l);
 }

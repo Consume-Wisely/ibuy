@@ -5,7 +5,7 @@ export class ModelVisualUtils {
   static getAttributeTitle(title: ITEM_ATTRIBUTES): string {
     switch(title) {
       case ITEM_ATTRIBUTES.SINGLE_APPROVAL.toString():
-        return "הכשר יחיד";        
+        return "הכשר רבנות בלבד";        
       case ITEM_ATTRIBUTES.NO_APPROVAL.toString():
         return "ללא הכשר";
       case ITEM_ATTRIBUTES.NOT_QUALIFIED.toString():

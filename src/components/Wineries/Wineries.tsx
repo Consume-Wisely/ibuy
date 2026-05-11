@@ -46,13 +46,18 @@ export const Wineries = (props: WineriesProps) => {
   }
 
   const winerySelectionHandler = (selectedIndex: number) => {
-    alert(`אופציה זאת עדיין לא פעילה.\n כשהיא תושלם יוצגו פרטים של ${selectedIndex > 0 ? "יקב" : ""} ${displayedWineries[selectedIndex].description.name}`);
+    if (selectedIndex === 0) {
+      setWineriesDescriptions(ModelUtils.getItemsDescriptions(wineries));
+    }
+    else {
+      setWineriesDescriptions([wineries[selectedIndex-1].description]);
+    }
   }
 
   if (props.singleApproval !== undefined && props.singleApproval === true) {
     return (
       <div>
-        עמוד זה יציג יינות עם הכשר יחיד
+        עמוד זה יציג יינות עם הכשר רבנות בלבד
       </div>
     )
   }

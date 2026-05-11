@@ -24,7 +24,7 @@ export const HomePage = () => {
               onClick={() => {
                 navigate("/single-approval")
               }}>
-              מוצרי מזון עם הכשר יחיד
+              מוצרי מזון עם הכשר רבנות בלבד
             </div>
             <div 
               className={ "home-page-menu-item app-clickable app-link" }

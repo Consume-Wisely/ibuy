@@ -5,7 +5,7 @@ export const SingleApprovalPage = () => {
   return (
     <div className="app-page">
       <TopBanner />
-      <div className="app-bold">למידע על יקבים עם הכשר יחיד עברו לעמוד היקבים</div>
+      <div className="app-bold">למידע על יקבים עברו לעמוד היקבים</div>
         <Groceries />
     </div>
   )
